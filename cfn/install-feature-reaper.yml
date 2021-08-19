@@ -1,0 +1,162 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Creates a CodeBuild job that removes k8s resources no longer associated with a git branch.
+
+Parameters:
+  SourceCodeRepoType:
+    Type: String
+    Description: The source repository provider. Only tested with "BITBUCKET", "GITHUB", and "CODECOMMIT"
+    Default: GITHUB
+    AllowedValues:
+    - BITBUCKET
+    - CODECOMMIT
+    - GITHUB
+  CodeRepositoryUrl:
+    Type: String
+    Description: "Code Repository name (i.e. https:///github.com/some-repo/repo.git)"
+    Default: "https://github.com/github4es/aws-kubernetes-accelerator.git"
+  EcrRepositoryName:
+    Type: String
+    Description: "The Docker container repository name (aka namespace i.e. namespace/repo-name)."
+    Default: "my-app/slippy"
+  EcrRepositoryUri:
+    Type: String
+    Description: "AWS ECR repository URI (AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/my-app/slippy) found in ECR console."
+    Default: "AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/my-app/slippy"
+  SourcePathForBuildSpec:
+    Type: String
+    Default: "build/feature-reaper.buildspec.yml"
+    Description: "If needed, change the location of the feature-reaper buildspec"
+  ProjectNameForResources:
+    Type: String
+    Description: "Enter the project name"
+    Default: "app-docker-image-reaper"
+    MinLength: 1
+  EksClusterName:
+    Type: String
+    Description: "Enter the EKS cluster name (e.g. ed-k8s)"
+    Default: "ed-k8s"
+    MinLength: 1
+  EksAdminRoleArn:
+    Type: String
+    Description: "Enter the arn to the EKS admin role that CodeBuild can assume to run kubectl commands. Get it from your EKS cluster admin group."
+    Default: "arn:aws:iam::005331601127:role/eks-k8s-CICD-Role"
+    MinLength: 1
+  DeleteFeatureImages:
+    Type: String
+    Description: "Indicates whether or not feature images in the repository are deleted when the release is uninstalled."
+    Default: "false"
+    AllowedValues:
+    - "true"
+    - "false"
+
+Conditions:
+  IsUsingCodeCommit: !Equals [!Ref SourceCodeRepoType, "CODECOMMIT"]
+
+Resources:
+  CloudWatchHelmReaperTriggersRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Action: ['sts:AssumeRole']
+          Effect: Allow
+          Principal:
+            Service: [events.amazonaws.com]
+        Version: '2012-10-17'
+      Path: /
+      Policies:
+        - PolicyName: CodeBuildHelmReaperTriggers
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Action:
+                - codebuild:StartBuild
+                Effect: Allow
+                Resource: !GetAtt CodeBuildHelmReaper.Arn
+      Tags:
+        -
+          Key: Name
+          Value: !Sub '${AWS::StackName}-feature-reaper'
+        -
+          Key: Application
+          Value: !Ref ProjectNameForResources
+
+  CodeBuildHelmReaperRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          Effect: Allow
+          Principal:
+            Service: codebuild.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+      Tags:
+        -
+          Key: Name
+          Value: !Sub '${AWS::StackName}-feature-reaper'
+        -
+          Key: Application
+          Value: !Ref ProjectNameForResources
+
+  CodeBuildHelmReaper:
+    DependsOn: CodeBuildHelmReaperRole
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Sub "${ProjectNameForResources}-feature-reaper"
+      Description: Scans source code repo and uninstalls k8s resources for feature branches that no longer exist
+      ServiceRole: !GetAtt CodeBuildHelmReaperRole.Arn
+      Artifacts:
+        Type: NO_ARTIFACTS
+      LogsConfig:
+        CloudWatchLogs:
+            GroupName: /cicd/feature-reaper-job
+            Status: ENABLED
+            StreamName: !Ref ProjectNameForResources
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        PrivilegedMode: true
+        Image: aws/codebuild/standard:4.0
+        Type: LINUX_CONTAINER
+        EnvironmentVariables:
+          - Name: ECR_REPOSITORY_NAME
+            Value: !Ref EcrRepositoryName
+          - Name: ECR_REPOSITORY_URI
+            Value: !Ref EcrRepositoryUri
+          - Name: EKS_ADMIN_ROLE
+            Value: !Ref EksAdminRoleArn
+          - Name: EKS_CLUSTER_NAME
+            Value: !Ref EksClusterName
+          - Name: REAP_FEATURE_IMAGES
+            Value: !Ref DeleteFeatureImages
+      Source:
+        Type: !Ref SourceCodeRepoType
+        Auth: !If
+          - IsUsingCodeCommit
+          - !Ref AWS::NoValue # No Auth value for CodeCommit
+          - Type: OAUTH
+        Location: !Ref CodeRepositoryUrl
+        BuildSpec: !Ref SourcePathForBuildSpec
+        GitCloneDepth: 0
+      TimeoutInMinutes: 45
+      Tags:
+        -
+          Key: Name
+          Value: !Sub '${AWS::StackName}-feature-reaper'
+        -
+          Key: Application
+          Value: !Ref ProjectNameForResources
+
+  CloudWatchEventRuleDailyHelmReaper:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: !Sub "${ProjectNameForResources}-feature-reaper"
+      Description: !Sub "Triggers the CodeBuild job named ${ProjectNameForResources}-feature-reaper"
+      ScheduleExpression: "rate(1 day)"
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt CodeBuildHelmReaper.Arn
+          Id: !Ref CodeBuildHelmReaper
+          RoleArn: !GetAtt CloudWatchHelmReaperTriggersRole.Arn

@@ -1,0 +1,5 @@
+{{- $deployment := .Values.deployment -}}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $deployment.namespace | default .Values.application.name }}

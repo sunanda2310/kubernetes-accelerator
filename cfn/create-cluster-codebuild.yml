@@ -1,0 +1,225 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Creates a CodeBuild Build job to run the eks cluster/cluster.yml.
+Mappings: 
+  DefaultTags:
+    Department:
+      department: "sw"      
+    CostCategory:
+      costCategory: "infrastructure"    
+    Owner:
+      owner: "the-owner"            
+    Name:
+      name: "kubernetes-cicd"
+    Manager:
+      manager: "your-manager"
+    Market:
+      market: "your-office"
+    EngagementOffice:
+      engagementOffice: "your-office"
+    Email:
+      email: "your-email"
+    ApplicationName:
+      applicationName: "kubernetes-cicd"  
+    ApplicationRole:
+      applicationRole: "kubernetes-cicd"  
+    Environment:
+      environment: "production"    
+    Version:
+      version: "0.0.1"           
+    CreatedBy:
+      createdBy: "kubernetes-automation"       
+    Tenantid:
+      tenantId: "n/a"      
+    Confidentiality:
+      confidentiality: "private"     
+    RequiresVersioning:
+      requiresVersioning: "false"
+    RequiresLogging:
+      requiresLogging: "true" 
+Parameters:
+  RepositoryUrl:
+    Type: String
+    Description: "Code Repository name (i.e. https:///github.com/some-repo/repo.git)"
+    Default: "https://github.com/ACCOUNT/aws-kubernetes-accelerator.git"
+  SourcePathForBuildSpec:
+    Type: String
+    Default: "cluster/build/buildspec.yml"
+    Description: "If needed, change the location where your end tests buildspec is (e.g. folder/buildspec.yml)"
+  ProjectNameForResources:
+    Type: String
+    Description: "Enter the project name for CodeBuild job and related resources."
+    Default: eks-cluster-job
+    MinLength: 1
+  EksNodeSshKeyParameterStorePath:
+    Type: String
+    Default: "/cicd/ssh-for-ec2s-public-key"
+    Description: "This is a param store path where an EC2 SSH key can be found so admins can ssh into EKS cluster nodes for troubleshooting. This must be enabled in the cluster.yml and create-cluster.sh files."
+    MinLength: 1
+  EksClusterName:
+    Type: String
+    Default: "ed-k8s"
+    Description: "EKS cluster name which will be used by CodeBuild job automation"
+    MinLength: 1
+  EksClusterComputeInstanceType:
+    Type: String
+    Default: "t3.small"
+    Description: "EKS cluster Compute Instance Type (e.g. t3.small, etc)"
+    MinLength: 1
+  EksClusterWorkerNodeCapacity:
+    Type: String
+    Default: "2"
+    Description: "How many EKS cluster worker nodes do you want to have (e.g. 2, 3, 4, etc)?"
+    MinLength: 1
+
+Resources:
+  CodeBuildExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          Effect: Allow
+          Principal:
+            Service: codebuild.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+      Tags:
+        - 
+          Key: Name
+          Value: !Sub '${AWS::StackName}-pipeline'
+        - 
+          Key: Manager
+          Value: !FindInMap [ DefaultTags, "Manager", "manager" ]    
+        - 
+          Key: Market
+          Value: !FindInMap [ DefaultTags, "Market", "market" ]  
+        - 
+          Key: "Engagement Office"
+          Value: !FindInMap [ DefaultTags, "EngagementOffice", "engagementOffice" ]  
+        - 
+          Key: Email
+          Value: !FindInMap [ DefaultTags, "Email", "email" ]  
+        - 
+          Key: department 
+          Value: !FindInMap [ DefaultTags, "Department", "department" ]      
+        - 
+          Key: cost-category
+          Value: !FindInMap [ DefaultTags, "CostCategory", "costCategory" ]    
+        - 
+          Key: owner
+          Value: !FindInMap [ DefaultTags, "Owner", "owner" ]
+        - 
+          Key: application-name
+          Value: !FindInMap [ DefaultTags, "ApplicationName", "applicationName" ]  
+        - 
+          Key: application-role
+          Value: !FindInMap [ DefaultTags, "ApplicationRole", "applicationRole" ]  
+        - 
+          Key: environment
+          Value: !FindInMap [ DefaultTags, "Environment", "environment" ] 
+        - 
+          Key: version
+          Value: !FindInMap [ DefaultTags, "Version", "version" ]       
+        - 
+          Key: created-by
+          Value: !FindInMap [ DefaultTags, "CreatedBy", "createdBy" ]         
+        - 
+          Key: tenant-id
+          Value: !FindInMap [ DefaultTags, "Tenantid", "tenantId" ]       
+        - 
+          Key: confidentiality
+          Value: !FindInMap [ DefaultTags, "Confidentiality", "confidentiality" ]   
+        - 
+          Key: requires-versioning
+          Value: !FindInMap [ DefaultTags, "RequiresVersioning", "requiresVersioning" ]
+        - 
+          Key: requires-logging
+          Value: !FindInMap [ DefaultTags, "RequiresLogging", "requiresLogging" ]
+  CodeBuildJob:
+    DependsOn: CodeBuildExecutionRole
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref ProjectNameForResources
+      Artifacts:
+        Type: NO_ARTIFACTS
+      LogsConfig:
+        CloudWatchLogs:
+            GroupName: /cicd/cluster-config
+            Status: ENABLED
+            StreamName: !Ref ProjectNameForResources
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:3.0
+        Type: LINUX_CONTAINER
+        EnvironmentVariables:
+          - Name: APP_NAME
+            Value: !Ref ProjectNameForResources
+          - Name: EKS_NODE_SSH_KEY_LOCATION
+            Value: !Ref EksNodeSshKeyParameterStorePath
+          - Name: EKS_CLUSTER_NAME
+            Value: !Ref EksClusterName
+          - Name: EKS_COMPUTE_INSTANCE_TYPE
+            Value: !Ref EksClusterComputeInstanceType
+          - Name: EKS_NODE_GROUP_CAPACITY
+            Value: !Ref EksClusterWorkerNodeCapacity
+      ServiceRole: !Ref CodeBuildExecutionRole
+      TimeoutInMinutes: 45
+      Source:
+        Type: GITHUB
+        Location: !Ref RepositoryUrl
+        BuildSpec: !Ref SourcePathForBuildSpec
+      Triggers:
+        Webhook: true
+      Tags:
+        - 
+          Key: Name
+          Value: !Sub '${AWS::StackName}-pipeline'
+        - 
+          Key: Manager
+          Value: !FindInMap [ DefaultTags, "Manager", "manager" ]    
+        - 
+          Key: Market
+          Value: !FindInMap [ DefaultTags, "Market", "market" ]  
+        - 
+          Key: "Engagement Office"
+          Value: !FindInMap [ DefaultTags, "EngagementOffice", "engagementOffice" ]  
+        - 
+          Key: Email
+          Value: !FindInMap [ DefaultTags, "Email", "email" ]  
+        - 
+          Key: department 
+          Value: !FindInMap [ DefaultTags, "Department", "department" ]      
+        - 
+          Key: cost-category
+          Value: !FindInMap [ DefaultTags, "CostCategory", "costCategory" ]    
+        - 
+          Key: owner
+          Value: !FindInMap [ DefaultTags, "Owner", "owner" ]
+        - 
+          Key: application-name
+          Value: !FindInMap [ DefaultTags, "ApplicationName", "applicationName" ]  
+        - 
+          Key: application-role
+          Value: !FindInMap [ DefaultTags, "ApplicationRole", "applicationRole" ]  
+        - 
+          Key: environment
+          Value: !FindInMap [ DefaultTags, "Environment", "environment" ] 
+        - 
+          Key: version
+          Value: !FindInMap [ DefaultTags, "Version", "version" ]       
+        - 
+          Key: created-by
+          Value: !FindInMap [ DefaultTags, "CreatedBy", "createdBy" ]         
+        - 
+          Key: tenant-id
+          Value: !FindInMap [ DefaultTags, "Tenantid", "tenantId" ]       
+        - 
+          Key: confidentiality
+          Value: !FindInMap [ DefaultTags, "Confidentiality", "confidentiality" ]   
+        - 
+          Key: requires-versioning
+          Value: !FindInMap [ DefaultTags, "RequiresVersioning", "requiresVersioning" ]
+        - 
+          Key: requires-logging
+          Value: !FindInMap [ DefaultTags, "RequiresLogging", "requiresLogging" ]

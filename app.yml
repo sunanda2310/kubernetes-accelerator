@@ -1,0 +1,28 @@
+application:
+  name: slippy
+  domain: sunandak8labtest.com
+  image:
+    name: {AWS_ACCOUNT}.dkr.ecr.us-west-2.amazonaws.com/repo/slippy
+  tags:
+    Name: ed-k8s-cluster
+    Email: sunanda.sharma@slalom.com
+    Manager: CD
+    Market: CDS
+    EngagementOffice: SV
+
+ingress:
+  routing: path
+
+service:
+  ports:
+    - port: 80
+      targetPort: 3000
+
+deployment:
+  ports:
+    - port: 3000
+
+# additional containers for deployment needs to be
+# valid k8s container configuration and will be
+# expanded without modification
+supportContainers: []

@@ -1,0 +1,221 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Creates a CodeBuild Build job to run an application (e.g. myApp) install and configuration in k8s. 
+Mappings:
+  DefaultTags:
+    Department:
+      department: "sw"
+    CostCategory:
+      costCategory: "infrastructure"
+    Owner:
+      owner: "the-owner"
+    Name:
+      name: "kubernetes-cicd"
+    Manager:
+      manager: "your-manager"
+    Market:
+      market: "your-city"
+    EngagementOffice:
+      engagementOffice: "your-city"
+    Email:
+      email: "your-email"
+    ApplicationName:
+      applicationName: "kubernetes-cicd"
+    ApplicationRole:
+      applicationRole: "kubernetes-cicd"
+    Environment:
+      environment: "production"
+    Version:
+      version: "0.0.1"
+    CreatedBy:
+      createdBy: "kubernetes-automation"
+    Tenantid:
+      tenantId: "n/a"
+    Confidentiality:
+      confidentiality: "private"
+    RequiresVersioning:
+      requiresVersioning: "false"
+    RequiresLogging:
+      requiresLogging: "true"
+Parameters:
+  CodeRepositoryUrl:
+    Type: String
+    Description: "Code Repository name (i.e. https:///github.com/some-repo/repo.git)"
+    Default: "https://github.com/github4es/aws-kubernetes-accelerator.git"
+  EcrRepositoryName:
+    Type: String
+    Description: "The Docker container repository name (aka namespace i.e. namespace/repo-name)."
+    Default: "my-app/slippy"
+  EcrRepositoryUri:
+    Type: String
+    Description: "AWS ECR repository URI (AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/my-app/slippy) found in ECR console."
+    Default: "AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/my-app/slippy"
+  SourcePathForBuildSpec:
+    Type: String
+    Default: "build/buildspec.yml"
+    Description: "If needed, change the location where your end tests buildspec is (e.g. folder/buildspec.yml)"
+  ProjectNameForResources:
+    Type: String
+    Description: "Enter the project name for CodeBuild job and related resources."
+    Default: "app-install-and-config-build"
+    MinLength: 1
+  EksClusterName:
+    Type: String
+    Description: "Enter the EKS cluster name (e.g. ed-k8s)"
+    Default: "ed-k8s"
+    MinLength: 1
+  EksAdminRoleArn:
+    Type: String
+    Description: "Enter the arn to the EKS admin role that CodeBuild can assume to run kubectl commands. Get it from your EKS cluster admin group."
+    Default: "arn:aws:iam::005331601127:role/eks-k8s-CICD-Role"
+    MinLength: 1
+Resources:
+  CodeBuildExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          Effect: Allow
+          Principal:
+            Service: codebuild.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+      Tags:
+        -
+          Key: Name
+          Value: !Sub '${AWS::StackName}-pipeline'
+        -
+          Key: Manager
+          Value: !FindInMap [ DefaultTags, "Manager", "manager" ]
+        -
+          Key: Market
+          Value: !FindInMap [ DefaultTags, "Market", "market" ]
+        -
+          Key: "Engagement Office"
+          Value: !FindInMap [ DefaultTags, "EngagementOffice", "engagementOffice" ]
+        -
+          Key: Email
+          Value: !FindInMap [ DefaultTags, "Email", "email" ]
+        -
+          Key: department
+          Value: !FindInMap [ DefaultTags, "Department", "department" ]
+        -
+          Key: cost-category
+          Value: !FindInMap [ DefaultTags, "CostCategory", "costCategory" ]
+        -
+          Key: owner
+          Value: !FindInMap [ DefaultTags, "Owner", "owner" ]
+        -
+          Key: application-name
+          Value: !FindInMap [ DefaultTags, "ApplicationName", "applicationName" ]
+        -
+          Key: application-role
+          Value: !FindInMap [ DefaultTags, "ApplicationRole", "applicationRole" ]
+        -
+          Key: environment
+          Value: !FindInMap [ DefaultTags, "Environment", "environment" ]
+        -
+          Key: version
+          Value: !FindInMap [ DefaultTags, "Version", "version" ]
+        -
+          Key: created-by
+          Value: !FindInMap [ DefaultTags, "CreatedBy", "createdBy" ]
+        -
+          Key: tenant-id
+          Value: !FindInMap [ DefaultTags, "Tenantid", "tenantId" ]
+        -
+          Key: confidentiality
+          Value: !FindInMap [ DefaultTags, "Confidentiality", "confidentiality" ]
+        -
+          Key: requires-versioning
+          Value: !FindInMap [ DefaultTags, "RequiresVersioning", "requiresVersioning" ]
+        -
+          Key: requires-logging
+          Value: !FindInMap [ DefaultTags, "RequiresLogging", "requiresLogging" ]
+  CodeBuildJob:
+    DependsOn: CodeBuildExecutionRole
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref ProjectNameForResources
+      Artifacts:
+        Type: NO_ARTIFACTS
+      LogsConfig:
+        CloudWatchLogs:
+            GroupName: /cicd/app-config-job
+            Status: ENABLED
+            StreamName: !Ref ProjectNameForResources
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        PrivilegedMode: true
+        Image: aws/codebuild/standard:4.0
+        Type: LINUX_CONTAINER
+        EnvironmentVariables:
+          - Name: ECR_REPOSITORY_NAME
+            Value: !Ref EcrRepositoryName
+          - Name: ECR_REPOSITORY_URI
+            Value: !Ref EcrRepositoryUri
+          - Name: EKS_ADMIN_ROLE
+            Value: !Ref EksAdminRoleArn
+          - Name: EKS_CLUSTER_NAME
+            Value: !Ref EksClusterName
+      ServiceRole: !Ref CodeBuildExecutionRole
+      TimeoutInMinutes: 45
+      Source:
+        Type: GITHUB
+        Location: !Ref CodeRepositoryUrl
+        BuildSpec: !Ref SourcePathForBuildSpec
+      Triggers:
+        Webhook: true
+      Tags:
+        -
+          Key: Name
+          Value: !Sub '${AWS::StackName}-pipeline'
+        -
+          Key: Manager
+          Value: !FindInMap [ DefaultTags, "Manager", "manager" ]
+        -
+          Key: Market
+          Value: !FindInMap [ DefaultTags, "Market", "market" ]
+        -
+          Key: "Engagement Office"
+          Value: !FindInMap [ DefaultTags, "EngagementOffice", "engagementOffice" ]
+        -
+          Key: Email
+          Value: !FindInMap [ DefaultTags, "Email", "email" ]
+        -
+          Key: department
+          Value: !FindInMap [ DefaultTags, "Department", "department" ]
+        -
+          Key: cost-category
+          Value: !FindInMap [ DefaultTags, "CostCategory", "costCategory" ]
+        -
+          Key: owner
+          Value: !FindInMap [ DefaultTags, "Owner", "owner" ]
+        -
+          Key: application-name
+          Value: !FindInMap [ DefaultTags, "ApplicationName", "applicationName" ]
+        -
+          Key: application-role
+          Value: !FindInMap [ DefaultTags, "ApplicationRole", "applicationRole" ]
+        -
+          Key: environment
+          Value: !FindInMap [ DefaultTags, "Environment", "environment" ]
+        -
+          Key: version
+          Value: !FindInMap [ DefaultTags, "Version", "version" ]
+        -
+          Key: created-by
+          Value: !FindInMap [ DefaultTags, "CreatedBy", "createdBy" ]
+        -
+          Key: tenant-id
+          Value: !FindInMap [ DefaultTags, "Tenantid", "tenantId" ]
+        -
+          Key: confidentiality
+          Value: !FindInMap [ DefaultTags, "Confidentiality", "confidentiality" ]
+        -
+          Key: requires-versioning
+          Value: !FindInMap [ DefaultTags, "RequiresVersioning", "requiresVersioning" ]
+        -
+          Key: requires-logging
+          Value: !FindInMap [ DefaultTags, "RequiresLogging", "requiresLogging" ]

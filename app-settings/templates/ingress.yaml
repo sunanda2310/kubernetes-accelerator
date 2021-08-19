@@ -1,0 +1,25 @@
+{{- $applicationName := .Values.application.name -}}
+{{- $deployment := .Values.deployment -}}
+{{- $ingressRouting := .Values.ingress.routing -}}
+{{- $ingressPath := .Values.ingress.path -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $deployment.name | default $applicationName }}
+  namespace: {{ $deployment.namespace | default $applicationName }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: {{ eq $ingressRouting "path" | ternary "/$2" $ingressPath }}
+    kubernetes.io/ingress.class: nginx
+  labels:
+    app: {{ $applicationName }}
+
+spec:
+  rules:
+    - host: {{ .Values.application.domain }}
+      http:
+        paths:
+          {{- $pathBasedRoutingPath := printf "%s(/|$)(.*)" $ingressPath }}
+          - path: {{ eq $ingressRouting "domain" | ternary $ingressPath $pathBasedRoutingPath }}
+            backend:
+              serviceName: {{ .Values.service.name | default $applicationName }}
+              servicePort: {{ .Values.ingress.port }}

@@ -1,0 +1,22 @@
+{
+  "name": "slippy",
+  "version": "1.0.0",
+  "description": "POC for Whiskey Delta Forty",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "d.smith",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^8.0.8",
+    "md5": "^2.2.1",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  }
+}

@@ -1,0 +1,20 @@
+version: 0.2
+
+# Requires these environment variables currently being passed via CodeBuild job properties.
+#   EKS_NODE_SSH_KEY_LOCATION
+#   EKS_AWS_ADMIN_ROLE for the EKS cluster admin team
+#   EKS_CLUSTER_NAME 
+#   EKS_COMPUTE_INSTANCE_TYPE for example t3.small
+#   EKS_NODE_GROUP_CAPACITY for example 2, 3, 4, 5, etc.          
+
+env:
+  variables:
+    Tags: "TBD"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - echo Install Phase
+      - bash cluster/build/bash/create-cluster.sh

@@ -1,0 +1,10 @@
+{{- $deployment := .Values.deployment -}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ $deployment.name | default .Values.application.name }}-deny-all
+  namespace: {{ $deployment.namespace | default .Values.application.name }}
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress

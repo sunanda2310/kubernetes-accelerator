@@ -1,0 +1,72 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+# The NAME of the CLUSTER is REPLACED by an environment variable via a sed bash command
+# The REGION for the cluster is set by the current AWS REGION in the execution profile/job running.
+metadata:
+  name: CUSTOMER_DESIRED_CLUSTER_NAME
+  region: CUSTOMER_CURRENT_JOB_AWS_REGION
+  version: "1.15"
+
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: aws-admin
+      labels: {aws-usage: "application"}
+    attachPolicyARNs:
+    - "arn:aws:iam::aws:policy/AdministratorAccess"
+
+# START VPC CONFIGURATION
+# To integrate with an existing VPC
+# uncomment the section below and enter your desired values
+# Otherwise by default if the vpc section is ommited
+# eksctl will create a VPC /16 with 3 private subnets and 3 public ones with a /19 (6 total subnets)
+# 
+
+# vpc:
+#   id: "vpc-0dd338ecf29863c55"  # (optional, must match VPC ID used for each subnet below)
+#   cidr: "192.168.0.0/16"       # (optional, must match CIDR used by the given VPC)
+#   subnets:
+#     # must provide 'private' and/or 'public' subnets by availibility zone as shown
+#     private:
+#       eu-north-1a:
+#         id: "subnet-0b2512f8c6ae9bf30"
+#         cidr: "192.168.128.0/19" # (optional, must match CIDR used by the given subnet)
+# 
+#       eu-north-1b:
+#         id: "subnet-08cb9a2ed60394ce3"
+#         cidr: "192.168.64.0/19"  # (optional, must match CIDR used by the given subnet)
+# 
+#       eu-north-1c:
+#         id: "subnet-00f71956cdec8f1dc"
+#         cidr: "192.168.0.0/19"   # (optional, must match CIDR used by the given subnet)
+# 
+# END VPC CONFIGURATION
+
+nodeGroups:
+  - name: eks-cluster-node-group-1
+    instanceType: CUSTOMER_DESIRED_COMPUTE_INSTANCE_TYPE
+    desiredCapacity: CUSTOMER_DESIRED_NODEGROUP_CAPACITY
+    minSize: 2
+    maxSize: 10
+# commenting out ssh feature - might be implemented in the future
+#   ssh:
+#      allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+#      publicKeyPath: ~/.ssh/eks_worker_nodes_pub.pem
+    labels: { role: workers }
+# Below auto wires the EKS Worker Role with these IAM policies
+    iam:
+      attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+        - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+        - arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
+        - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly #For EKS to download ECR images
+        - arn:aws:iam::aws:policy/AmazonRoute53FullAccess  # To register/deregister R53 Hosted Zones
+      withAddonPolicies:
+          imageBuilder: true
+          autoScaler: true
+          externalDNS: true
+          certManager: true
+          albIngress: true
+          cloudWatch: true   # This is required for CloudWatch Container Insights

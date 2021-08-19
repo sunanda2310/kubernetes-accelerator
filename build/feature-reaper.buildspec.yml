@@ -1,0 +1,31 @@
+version: 0.2
+
+# Requires these environment variables currently being passed via CodeBuild job properties.
+#     ECR_REPOSITORY_NAME
+#     ECR_REPOSITORY_URI
+#     EKS_ADMIN_ROLE
+#     EKS_CLUSTER_NAME
+#     REAP_FEATURE_IMAGES
+
+env:
+  variables:
+    Tags: "TBD"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - apt-get update
+      # Forced to upgrade awscli because AWS broke for no reason
+      - pip install --upgrade awscli
+      - pip install yq
+
+  pre_build:
+    commands:
+      - yq --version
+      - chmod 700 build/bash/feature-reaper.sh
+
+  build:
+    commands:
+      - ./build/bash/feature-reaper.sh

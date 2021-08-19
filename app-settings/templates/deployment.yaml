@@ -1,0 +1,47 @@
+{{- $applicationName := .Values.application.name -}}
+{{- $deployment := .Values.deployment -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $deployment.name | default $applicationName }}
+  namespace: {{ $deployment.namespace | default $applicationName }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ $applicationName }}
+  {{- with $deployment.container }}
+  replicas: {{ $deployment.container.replicaCount | default 1 }}
+  {{- else }}
+  replicas: 1
+  {{- end }}
+  replicas:
+  template:
+    metadata:
+      labels:
+        app: {{ $applicationName }}
+    spec:
+      containers:
+      {{- with .Values.image }}
+      -
+        image: {{ .name }}
+        imagePullPolicy: {{ .pullPolicy }}
+        {{- with $deployment.container }}
+        name: {{ $deployment.container.name | default $applicationName }}
+        {{- else }}
+        name: {{ $applicationName }}
+        {{- end }}
+      {{- end}}
+        {{- if $deployment.ports }}
+        ports:
+        {{- range $port := $deployment.ports }}
+        - containerPort: {{ $port.port }}
+          {{- if $port.name }}
+          name: {{ $port.name }}
+          {{- end }}
+        {{- end }}
+        {{- end }}
+      {{- if .Values.supportContainers }}
+      {{- range .Values.supportContainers }}
+      - {{- toYaml . | nindent 8 }}
+      {{- end}}
+      {{- end}}
