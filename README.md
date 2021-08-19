@@ -224,3 +224,4 @@ helmVersion: v3.1.2
 ```
 
 The default [version of helm](https://github.com/helm/helm/releases) installed for use by the accelerator is `v3.1.2` but can be changed by providing `helmVersion`.
+# kubernetes-accelerator
