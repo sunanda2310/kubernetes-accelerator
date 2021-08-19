@@ -4,10 +4,10 @@
 # bash ./build/bash/account-init.sh
 
 # export these vars to set your script
-export EKS_AWS_ADMIN_ROLE="[admin role to your cluster]"
+export EKS_AWS_ADMIN_ROLE="test"
 export EKS_ADMIN_PROFILE="[aws config profile]"
 export EKS_CLUSTER_NAME="[cluster name]"
-export EKS_REGION="[region]"
+export EKS_REGION="us-east-1"
 
 echo "get the role arn for $EKS_AWS_ADMIN_ROLE"
 EKS_AWS_ADMIN_ROLE_ARN=$(aws iam get-role --role-name $EKS_AWS_ADMIN_ROLE --profile $EKS_ADMIN_PROFILE --output text --query 'Role.Arn')
