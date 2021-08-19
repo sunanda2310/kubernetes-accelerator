@@ -40,7 +40,7 @@ Parameters:
   RepositoryUrl:
     Type: String
     Description: "Code Repository name (i.e. https:///github.com/some-repo/repo.git)"
-    Default: "https://github.com/ACCOUNT/aws-kubernetes-accelerator.git"
+    Default: "https://github.com/sunanda2310/aws-kubernetes-accelerator.git"
   SourcePathForBuildSpec:
     Type: String
     Default: "cluster/build/buildspec.yml"
