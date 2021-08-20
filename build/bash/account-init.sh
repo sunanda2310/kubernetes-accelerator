@@ -5,7 +5,7 @@
 
 # export these vars to set your script
 export EKS_AWS_ADMIN_ROLE="test"
-export EKS_ADMIN_PROFILE=""
+export EKS_ADMIN_PROFILE="default"
 export EKS_CLUSTER_NAME="ed-k8s"
 export EKS_REGION="us-east-1"
 
