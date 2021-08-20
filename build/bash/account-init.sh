@@ -5,8 +5,8 @@
 
 # export these vars to set your script
 export EKS_AWS_ADMIN_ROLE="test"
-export EKS_ADMIN_PROFILE="[aws config profile]"
-export EKS_CLUSTER_NAME="[cluster name]"
+export EKS_ADMIN_PROFILE=""
+export EKS_CLUSTER_NAME="ed-k8s"
 export EKS_REGION="us-east-1"
 
 echo "get the role arn for $EKS_AWS_ADMIN_ROLE"
