@@ -22,14 +22,14 @@ readonly BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $2'})
 
 echo "Projecte Name: $PROJECT_NAME"
 echo "CodeBuild ID: $BUILD_ID"
-
-export BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate | awk '{print $1; exit}')
+git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate
+export BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate | tail -n 1 | awk '{print $2; exit}') # | awk '{print $1; exit}')
+echo "Branch Name: $BRANCH_NAME"
 export BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)
+echo "Branch Type: $BRANCH_TYPE"
 export APP_CHANGED=$(test $(git whatchanged -n 1 | grep -q 'app/'; echo $?) -eq 0 && echo 1 || echo 0)
 export APP_NAME=$(cat app.yml | yq -r '.application.name' | awk '{print tolower($0)}')
 
-echo "Branch Name: $BRANCH_NAME"
-echo "Branch Type: $BRANCH_TYPE"
 echo "Application Name: $APP_NAME"
 echo "Application Changes?: $APP_CHANGED"
 
