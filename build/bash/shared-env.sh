@@ -23,8 +23,8 @@ readonly BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $2'})
 echo "Project Name: $PROJECT_NAME"
 echo "CodeBuild ID: $BUILD_ID"
 echo "Source commit ID: $CODEBUILD_SOURCE_VERSION"
-git branch --contains $CODEBUILD_SOURCE_VERSION --sort=committerdate
-export BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=committerdate | head -n 1 | awk '{print $2; exit}') 
+git name-rev $CODEBUILD_SOURCE_VERSION 
+export BRANCH_NAME=$(git name-rev $CODEBUILD_SOURCE_VERSION | awk '{print $2; exit}') 
 echo "Branch Name: $BRANCH_NAME"
 export BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)
 echo "Branch Type: $BRANCH_TYPE"
