@@ -21,27 +21,19 @@ BPWD=$(pwd)
 
 # Install Phase
 echo "Install Phase"
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-    brew install kubectl eksctl
-else
+
     apt-get update
 
     # install & configure kubectl
-    if [ "$(kubectl version 2>/dev/null | grep -ic 'Client Version')" -eq 0 ]; then
-        curl -o kubectl  https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.15/2020-11-02/bin/linux/amd64/kubectl
+        curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.15/2020-11-02/bin/linux/amd64/kubectl
         chmod +x ./kubectl
         mv ./kubectl /usr/local/bin/kubectl
-    fi
     kubectl version --short --client
 
-    # install eksctl
-    if [ "$(eksctl info 2>/dev/null | grep -ci 'eksctl version')" -eq 0 ]; then
-        curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-        mv /tmp/eksctl /usr/local/bin
-    fi
+    curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    mv /tmp/eksctl /usr/local/bin
     eksctl version
 
-fi
 
 # install cloud-formation linting tool
 pip3 install cfn-lint --quiet
