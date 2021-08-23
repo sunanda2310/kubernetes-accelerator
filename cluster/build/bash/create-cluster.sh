@@ -21,24 +21,26 @@ BPWD=$(pwd)
 
 # Install Phase
 echo "Install Phase"
+uname -s
+apt-get update
 
-    apt-get update
+# install & configure kubectl
+#Deprecated Version: curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.15/2020-11-02/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mv ./kubectl /usr/local/bin/kubectl
+kubectl version --short --client
 
-    # install & configure kubectl
-        curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.15/2020-11-02/bin/linux/amd64/kubectl
-        chmod +x ./kubectl
-        mv ./kubectl /usr/local/bin/kubectl
-    kubectl version --short --client
-
-    curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-    mv /tmp/eksctl /usr/local/bin
-    eksctl version
-
+# install eksctl
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+mv /tmp/eksctl /usr/local/bin
+eksctl version
 
 # install cloud-formation linting tool
 pip3 install cfn-lint --quiet
 
 # Check cluster template lint
+
 cfn-lint --template cfn/*.yml --region $AWS_DEFAULT_REGION --ignore-checks W
 
 # Determine branch name and type
@@ -72,13 +74,14 @@ sed -i "s/CUSTOMER_DESIRED_COMPUTE_INSTANCE_TYPE/${EKS_COMPUTE_INSTANCE_TYPE}/g"
 sed -i "s/CUSTOMER_DESIRED_NODEGROUP_CAPACITY/${EKS_NODE_GROUP_CAPACITY}/g" cluster/cluster.yml
 sed -i "s/CUSTOMER_DESIRED_CLUSTER_NAME/${EKS_CLUSTER_NAME}/g" cluster/ingress/alb-ingress-controller.yaml
 # End update to cluster name, instance type and worker node capacity
+echo "starting post cluster name"
 
-if expr "$BRANCH_NAME" : "master" > /dev/null; then
+#if expr "$BRANCH_NAME" : "master" > /dev/null; then
     eksctl create cluster --config-file=cluster/cluster.yml;
-
+    echo "entered if loop"
     # Install Calico Network Policy Engine
     kubectl apply -f $BPWD/cluster/calico/calico-v1.5.yml
-
+    echo "finished calico"
     # Create IAM policy for external DNS
     kubectl apply -f cluster/external-dns/external-dns.yml
 
@@ -93,7 +96,7 @@ if expr "$BRANCH_NAME" : "master" > /dev/null; then
     --override-existing-serviceaccounts \
     --approve
     # End Create IAM policy for external DNS
-
+    echo "Created IAM policy for external DNS"
 
     # Create IAM ROLE that EKS admin team can use
     echo "Creating EKS IAM role for admin team"
@@ -135,10 +138,10 @@ if expr "$BRANCH_NAME" : "master" > /dev/null; then
     echo "Configured metrics server for HPA successfully."
     # End Configure metrics server for Horizontal Pod Autoscaler
 
-elif expr "$BRANCH_TYPE" : "feature" > /dev/null; then
+#elif expr "$BRANCH_TYPE" : "feature" > /dev/null; then
     # TAG for non-prod docker image tagging
-    echo "No EKS Cluster Action was taken because this was run against a FEATURE branch"
-fi
+    #echo "No EKS Cluster Action was taken because this was run against a FEATURE branch"
+#fi
 echo "Created $EKS_CLUSTER_NAME"
 echo "EKS_AWS_ADMIN_ROLE: $EKS_AWS_ADMIN_ROLE"
 echo "create-cluster bash script completed."
