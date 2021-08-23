@@ -31,9 +31,9 @@ echo "Branch Type: $BRANCH_TYPE"
 echo "1--"
 git whatchanged -n 1
 echo "2--"
-git whatchanged -n 1 | grep -q 'app/'
+git whatchanged -n 1 | grep 'app/'
 echo "3--"
-git whatchanged -n 1 | grep -q 'app/'; echo $?
+git whatchanged -n 1 | grep 'app/'; echo $?
 echo "4--"
 export APP_CHANGED=$(test "$(git whatchanged -n 1 | grep -q 'app/'; echo $?)" -eq 0 && echo 1 || echo 0)
 export APP_NAME=$(cat app.yml | yq -r '.application.name' | awk '{print tolower($0)}')
