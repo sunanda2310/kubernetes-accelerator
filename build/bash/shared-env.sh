@@ -20,9 +20,10 @@ BPWD=$(pwd)
 readonly PROJECT_NAME=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $1'})
 readonly BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $2'})
 
-echo "Projecte Name: $PROJECT_NAME"
+echo "Project Name: $PROJECT_NAME"
 echo "CodeBuild ID: $BUILD_ID"
-git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate
+echo "Source commit ID: $CODEBUILD_SOURCE_VERSION"
+git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate
 export BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate | tail -n 1 | awk '{print $2; exit}') # | awk '{print $1; exit}')
 echo "Branch Name: $BRANCH_NAME"
 export BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)

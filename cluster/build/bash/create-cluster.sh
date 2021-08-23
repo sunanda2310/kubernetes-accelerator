@@ -76,7 +76,7 @@ sed -i "s/CUSTOMER_DESIRED_CLUSTER_NAME/${EKS_CLUSTER_NAME}/g" cluster/ingress/a
 # End update to cluster name, instance type and worker node capacity
 echo "starting post cluster name"
 
-#if expr "$BRANCH_NAME" : "master" > /dev/null; then
+if expr "$BRANCH_NAME" : "master" > /dev/null; then
     eksctl create cluster --config-file=cluster/cluster.yml;
     echo "entered if loop"
     # Install Calico Network Policy Engine
@@ -138,10 +138,10 @@ echo "starting post cluster name"
     echo "Configured metrics server for HPA successfully."
     # End Configure metrics server for Horizontal Pod Autoscaler
 
-#elif expr "$BRANCH_TYPE" : "feature" > /dev/null; then
+elif expr "$BRANCH_TYPE" : "feature" > /dev/null; then
     # TAG for non-prod docker image tagging
     #echo "No EKS Cluster Action was taken because this was run against a FEATURE branch"
-#fi
+fi
 echo "Created $EKS_CLUSTER_NAME"
 echo "EKS_AWS_ADMIN_ROLE: $EKS_AWS_ADMIN_ROLE"
 echo "create-cluster bash script completed."
