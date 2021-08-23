@@ -2,7 +2,7 @@ application:
   name: slippy
   domain: sunandak8labtest.com
   image:
-    name: {AWS_ACCOUNT}.dkr.ecr.us-west-2.amazonaws.com/repo/slippy
+    name: 044338566249.dkr.ecr.us-east-1.amazonaws.com/my-app/slippy
   tags:
     Name: ed-k8s-cluster
     Email: sunanda.sharma@slalom.com

@@ -48,7 +48,7 @@ Parameters:
   EcrRepositoryUri:
     Type: String
     Description: "AWS ECR repository URI (AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/my-app/slippy) found in ECR console."
-    Default: "AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/my-app/slippy"
+    Default: "044338566249.dkr.ecr.us-east-1.amazonaws.com/my-app/slippy"
   SourcePathForBuildSpec:
     Type: String
     Default: "build/buildspec.yml"
@@ -66,7 +66,7 @@ Parameters:
   EksAdminRoleArn:
     Type: String
     Description: "Enter the arn to the EKS admin role that CodeBuild can assume to run kubectl commands. Get it from your EKS cluster admin group."
-    Default: "arn:aws:iam::005331601127:role/eks-k8s-CICD-Role"
+    Default: "arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators"
     MinLength: 1
 Resources:
   CodeBuildExecutionRole:

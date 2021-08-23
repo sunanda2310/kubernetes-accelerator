@@ -12,7 +12,7 @@ aws cloudformation deploy \
   --stack-name "${stackName}" \
   --no-fail-on-empty-changeset \
   --capabilities CAPABILITY_NAMED_IAM \
-  --profile #[eks admin profile]
+
  
 # ensure that termination protection enabled
 # aws cloudformation update-termination-protection \
