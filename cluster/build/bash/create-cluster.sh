@@ -28,7 +28,7 @@ else
 
     # install & configure kubectl
     if [ "$(kubectl version 2>/dev/null | grep -ic 'Client Version')" -eq 0 ]; then
-        curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
+        curl -o kubectl  https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.15/2020-11-02/bin/linux/amd64/kubectl
         chmod +x ./kubectl
         mv ./kubectl /usr/local/bin/kubectl
     fi

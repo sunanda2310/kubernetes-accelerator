@@ -6,7 +6,7 @@ kind: ClusterConfig
 metadata:
   name: CUSTOMER_DESIRED_CLUSTER_NAME
   region: CUSTOMER_CURRENT_JOB_AWS_REGION
-  version: "1.15"
+  version: "1.16" # Version needs to be changed to a newer one
 
 iam:
   withOIDC: true

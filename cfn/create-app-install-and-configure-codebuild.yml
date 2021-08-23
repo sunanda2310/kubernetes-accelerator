@@ -40,7 +40,7 @@ Parameters:
   CodeRepositoryUrl:
     Type: String
     Description: "Code Repository name (i.e. https:///github.com/some-repo/repo.git)"
-    Default: "https://github.com/github4es/aws-kubernetes-accelerator.git"
+    Default: "https://github.com/sunanda2310/kubernetes-accelerator.git"
   EcrRepositoryName:
     Type: String
     Description: "The Docker container repository name (aka namespace i.e. namespace/repo-name)."
