@@ -28,6 +28,13 @@ export BRANCH_NAME=$(git name-rev $CODEBUILD_SOURCE_VERSION | awk '{print $2; ex
 echo "Branch Name: $BRANCH_NAME"
 export BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)
 echo "Branch Type: $BRANCH_TYPE"
+echo "1--"
+git whatchanged -n 1
+echo "2--"
+git whatchanged -n 1 | grep -q 'app/'
+echo "3--"
+git whatchanged -n 1 | grep -q 'app/'; echo $?
+echo "4--"
 export APP_CHANGED=$(test "$(git whatchanged -n 1 | grep -q 'app/'; echo $?)" -eq 0 && echo 1 || echo 0)
 export APP_NAME=$(cat app.yml | yq -r '.application.name' | awk '{print tolower($0)}')
 
