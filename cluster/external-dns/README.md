@@ -114,7 +114,7 @@ spec:
         args:
         - --source=service
         - --source=ingress
-        - --domain-filter=kubeaccelerate.me # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
+        - --domain-filter=sunandak8labtest.com # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
         - --provider=aws
         - --aws-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)
         - --registry=txt
@@ -141,7 +141,7 @@ annotations:
   alb.ingress.kubernetes.io/scheme: internet-facing
 
   # for creating record-set
-  external-dns.alpha.kubernetes.io/hostname: nginx.kubeaccelerate.me # set domain name here
+  external-dns.alpha.kubernetes.io/hostname: nginx.sunandak8labtest.com # set domain name here
 ```
 
 - Any LoadBalancer type Service with the same annotation will also yield the same results.
@@ -152,5 +152,5 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: nginx.kubeaccelerate.me # set domain name here
+    external-dns.alpha.kubernetes.io/hostname: nginx.sunandak8labtest.com # set domain name here
 ```

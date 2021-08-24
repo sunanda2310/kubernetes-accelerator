@@ -1,4 +1,5 @@
 # aws kubernetes accelerator
+TEST!!
 Project is structured as follows:
 
 ```shell
@@ -56,6 +57,8 @@ This ends the one-time infrastructure configuration.
 ### Creating the EKS Cluster
 
 1. Run `/build/bash/deploy-create-cluster-codebuild.sh` to apply this template `cfn/create-cluster-codebuild.yml` or by importing into the AWS Cloudformation Console  
+
+Push commit to github, trigger pipeline.
 
 **NOTE:** It will take about 20 minutes to create the EKS. 
 
