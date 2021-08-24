@@ -60,6 +60,8 @@ This ends the one-time infrastructure configuration.
 
 Push commit to github, trigger pipeline.
 
+**NOTE:** Code must be pushed to main/master for the first time, in order to trigger the EKS creation
+
 **NOTE:** It will take about 20 minutes to create the EKS. 
 
 ### Creating the sample application installation and configuration
