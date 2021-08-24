@@ -140,7 +140,7 @@ if expr "$BRANCH_NAME" : "master" > /dev/null; then
 
 elif expr "$BRANCH_TYPE" : "feature" > /dev/null; then
     # TAG for non-prod docker image tagging
-    #echo "No EKS Cluster Action was taken because this was run against a FEATURE branch"
+    echo "No EKS Cluster Action was taken because this was run against a FEATURE branch"
 fi
 echo "Created $EKS_CLUSTER_NAME"
 echo "EKS_AWS_ADMIN_ROLE: $EKS_AWS_ADMIN_ROLE"
