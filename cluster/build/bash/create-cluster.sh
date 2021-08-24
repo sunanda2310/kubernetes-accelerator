@@ -138,10 +138,11 @@ if expr "$BRANCH_NAME" : "master" > /dev/null; then
     echo "Configured metrics server for HPA successfully."
     # End Configure metrics server for Horizontal Pod Autoscaler
 
+    echo "EKS_AWS_ADMIN_ROLE: $EKS_AWS_ADMIN_ROLE"
+
 elif expr "$BRANCH_TYPE" : "feature" > /dev/null; then
     # TAG for non-prod docker image tagging
     echo "No EKS Cluster Action was taken because this was run against a FEATURE branch"
 fi
 echo "Created $EKS_CLUSTER_NAME"
-echo "EKS_AWS_ADMIN_ROLE: $EKS_AWS_ADMIN_ROLE"
 echo "create-cluster bash script completed."

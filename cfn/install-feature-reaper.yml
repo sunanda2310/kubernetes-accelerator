@@ -17,11 +17,11 @@ Parameters:
   EcrRepositoryName:
     Type: String
     Description: "The Docker container repository name (aka namespace i.e. namespace/repo-name)."
-    Default: "my-app/slippy"
+    Default: "kubernetes_k8/slippy"
   EcrRepositoryUri:
     Type: String
     Description: "AWS ECR repository URI (AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/my-app/slippy) found in ECR console."
-    Default: "AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/my-app/slippy"
+    Default: "044338566249.dkr.ecr.us-east-1.amazonaws.com/kubernetes_k8/slippy"
   SourcePathForBuildSpec:
     Type: String
     Default: "build/feature-reaper.buildspec.yml"

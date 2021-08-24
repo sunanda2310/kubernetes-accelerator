@@ -24,7 +24,7 @@ BPWD=$(pwd)
 $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
 
 # Running docker lint
-docker run --rm -i hadolint/hadolint < container/Dockerfile
+#docker run --rm -i hadolint/hadolint < container/Dockerfile
 
 # build phase
 cd app
