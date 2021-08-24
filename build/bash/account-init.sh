@@ -35,34 +35,34 @@ echo "helm list"
 helm list
 
 
-''' more general helpers
+# ''' more general helpers
 
-  kubectl get svc -n ingress-nginx
-  kubectl describe service -n ingress-nginx ingress-nginx
-  kubectl get namespaces
-  kubectl get svc --all-namespaces
-  kubectl describe nodes
-  kubectl get pod -A -o wide
+#   kubectl get svc -n ingress-nginx
+#   kubectl describe service -n ingress-nginx ingress-nginx
+#   kubectl get namespaces
+#   kubectl get svc --all-namespaces
+#   kubectl describe nodes
+#   kubectl get pod -A -o wide
 
-'''
+# '''
 
-''' tear down and recreate ingress controller
+# ''' tear down and recreate ingress controller
 
-      ##delete the ingress service for a namespace
-      kubectl delete svc ingress-nginx -n ingress-nginx
-      ##create the nlb ingress service
-      kubectl apply -f cluster/nlb-ingress/nlb-service.yml
-'''
+#       ##delete the ingress service for a namespace
+#       kubectl delete svc ingress-nginx -n ingress-nginx
+#       ##create the nlb ingress service
+#       kubectl apply -f cluster/nlb-ingress/nlb-service.yml
+# '''
 
-''' drain and delete nodegroup
+# ''' drain and delete nodegroup
 
-      kubectl get nodes 
-      kubectl cordon [nodegroup]
-      kubectl drain [nodegroup] --ignore-daemonsets
-      kubectl drain [nodegroup] --ignore-daemonsets
-      kubectl delete --all pods --namespace=[namespace]
+#       kubectl get nodes 
+#       kubectl cordon [nodegroup]
+#       kubectl drain [nodegroup] --ignore-daemonsets
+#       kubectl drain [nodegroup] --ignore-daemonsets
+#       kubectl delete --all pods --namespace=[namespace]
 
-'''
+# '''
 
 
 # echo "check subnets for our vpc"
