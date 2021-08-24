@@ -35,7 +35,7 @@ echo "Application Name: $APP_NAME"
 echo "Application Changes?: $APP_CHANGED"
 
 IMAGE_TAG=""
-if expr "$BRANCH_NAME" : "master" > /dev/null; then
+if [[ "$BRANCH_NAME" == *"master"* ]] || [[ "$BRANCH_NAME" == *"main"* ]]; then
   export APP_NAMESPACE=$APP_NAME
   export IMAGE_TAG="latest"
   export SHOULD_BUILD_IMAGE=$(test $APP_CHANGED -eq 1 && echo "true" || echo "false")
