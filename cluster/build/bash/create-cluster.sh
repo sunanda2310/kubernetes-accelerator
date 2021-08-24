@@ -76,7 +76,7 @@ sed -i "s/CUSTOMER_DESIRED_CLUSTER_NAME/${EKS_CLUSTER_NAME}/g" cluster/ingress/a
 # End update to cluster name, instance type and worker node capacity
 echo "starting post cluster name"
 
-if expr "$BRANCH_NAME" : "master" > /dev/null; then
+if [[ "$BRANCH_NAME" == *"master"* ]] || [[ "$BRANCH_NAME" == *"main"* ]]; then
     eksctl create cluster --config-file=cluster/cluster.yml;
     echo "entered if loop"
     # Install Calico Network Policy Engine
