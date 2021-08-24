@@ -44,14 +44,15 @@ pip3 install cfn-lint --quiet
 cfn-lint --template cfn/*.yml --region $AWS_DEFAULT_REGION --ignore-checks W
 
 # Determine branch name and type
-BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate | awk '{print $1; exit}')
-BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1) # Only needed if checking that the branch is a feature, PR, etc.
+BRANCH_NAME=$(git name-rev $CODEBUILD_SOURCE_VERSION | awk '{print $2; exit}') 
+echo "Branch Name: $BRANCH_NAME"
+BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)
+echo "Branch Type: $BRANCH_TYPE"
+
 PROJECT_NAME=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $1'})
 BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $2'})
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity | jq .Account --raw-output)
 
-echo "Branch Name: $BRANCH_NAME"
-echo "Branch Type: $BRANCH_TYPE"
 echo "Projecte Name: $PROJECT_NAME"
 echo "CodeBuild ID $BUILD_ID"
 
