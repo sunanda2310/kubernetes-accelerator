@@ -58,6 +58,8 @@ This ends the one-time infrastructure configuration.
 
 1. Run `/build/bash/deploy-create-cluster-codebuild.sh` to apply this template `cfn/create-cluster-codebuild.yml` or by importing into the AWS Cloudformation Console  
 
+Push commit to github, trigger pipeline.
+
 **NOTE:** It will take about 20 minutes to create the EKS. 
 
 ### Creating the sample application installation and configuration
