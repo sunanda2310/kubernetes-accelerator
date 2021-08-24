@@ -53,7 +53,7 @@ PROJECT_NAME=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $1'})
 BUILD_ID=$(echo $CODEBUILD_BUILD_ID | sed 's/:/ /g' | awk '{print $2'})
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity | jq .Account --raw-output)
 
-echo "Projecte Name: $PROJECT_NAME"
+echo "Project Name: $PROJECT_NAME"
 echo "CodeBuild ID $BUILD_ID"
 
 # Current path of working directory
@@ -79,7 +79,6 @@ echo "starting post cluster name"
 
 if [[ "$BRANCH_NAME" == *"master"* ]] || [[ "$BRANCH_NAME" == *"main"* ]]; then
     eksctl create cluster --config-file=cluster/cluster.yml;
-    echo "entered if loop"
     # Install Calico Network Policy Engine
     kubectl apply -f $BPWD/cluster/calico/calico-v1.5.yml
     echo "finished calico"
