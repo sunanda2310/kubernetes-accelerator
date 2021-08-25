@@ -1,0 +1,1181 @@
+    1  wget /Users/sunanda.sharma/Downloads/terraform_1.0.4_darwin_amd64.zip 
+    2  brew tap hashicorp/tap
+    3  ,,..........
+    4  clr
+    5  clear
+    6  brew tap hashicorp/tap
+    7  cd..
+    8  ls
+    9  $ echo $/Users/sunanda.sharma/Documents/Slalom FA
+   10  echo /Users/sunanda.sharma/Documents/Slalom FA
+   11  mv ~/Downloads/terraform /usr/local/bin/
+   12  mv ~/Downloads/terraform /Users/sunanda.sharma/Documents/Slalom FA\n
+   13  terraform -help
+   14  clear
+   15  echo $/Users/sunanda.sharma/Downloads/terraform
+   16  mv /Users/sunanda.sharma/Downloads/terraform\n /Users/sunanda.sharma/Documents/Slalom FA
+   17  mv /Users/sunanda.sharma/Downloads/terraform\n /Users/sunanda.sharma/Documents/Slalom_FA
+   18  ls
+   19  clear
+   20  echo $/Users/sunanda.sharma/Downloads/terraform
+   21  mv ~/Downloads/terraform /usr/local/bin/terraform
+   22  mv /Users/sunanda.sharma/Downloads/terraform /usr/local/bin/terraform
+   23  ls -ltrh
+   24  pwd
+   25  cd Downloads
+   26  ls
+   27  sudo mv /Users/sunanda.sharma/Downloads/terraform /usr/local/bin/terraform
+   28  ls
+   29  cd ..
+   30  ls
+   31  cd ..
+   32  cd ..
+   33  cd ..
+   34  cd Documents
+   35  ls
+   36  ls
+   37  cd Desktop
+   38  ls
+   39  terraform --version
+   40  terraform init
+   41  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"\n   
+   42  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl.sha256"
+   43  echo "$(<kubectl.sha256)  kubectl" | shasum -a 256 --check
+   44  chmod +x ./kubectl
+   45  sudo mv ./kubectl /usr/local/bin/kubectl
+   46  sudo chown root: /usr/local/bin/kubectl
+   47  kubectl version --client
+   48  kubectl cluster-info
+   49  kubectl cluster-info dump
+   50  kubectl cluster-info dump
+   51  yes
+   52  clear
+   53  kubectl cluster-info
+   54  kubectl cluster-info dump
+   55  kubectl completion zsh
+   56  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+   57  sudo install minikube-darwin-amd64 /usr/local/bin/minikube\n
+   58  minikube start
+   59  minikube start --driver
+   60  minikube start --help
+   61  minikube start --driver=docker\n
+   62  minikube start --driver=docker\n
+   63  minikube config set driver docker
+   64  docker info --format '{{.OSType}}'
+   65  --alsologtostderr -v=1
+   66  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp\nsudo mv /tmp/eksctl /usr/local/bin\n
+   67  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   68  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+   69  sudo mv /tmp/eksctl /usr/local/bin
+   70  brew tap weaveworks/tap
+   71  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   72  brew install wget
+   73  brew tap weaveworks/tap
+   74  brew install weaveworks/tap/eksctl
+   75   kubectl apply -f https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.5/config/v1.5/calico.yaml\n
+   76  ls
+   77  .ls
+   78  sudo npm install -g aws-azure-login --unsafe-perm
+   79  sudo chmod -R go+rx $(npm root -g)
+   80  sudo chown -R $USER:$(id -gn $USER) /Users/sunanda.sharma/.config
+   81  sudo chmod -R go+rx $(npm root -g)
+   82  aws-azure-login --configure
+   83  aws configure
+   84  aws configure --profile ss
+   85  aws-azure-login configure --profile ss
+   86  aws-azure-login configure --profile ss
+   87  which aws
+   88  aws --version
+   89  aws configure --profile ss
+   90  aws-azure-login configure --profile ss
+   91  aws-azure-login configure --profile sk
+   92  aws-azure-login configure
+   93  aws-azure-login --configure
+   94  aws-azure-login --no-prompt
+   95  aws s3 ls
+   96  aws-azure-login --profile sk
+   97  aws-azure-login --no-prompt
+   98  terraform init
+   99  vi main.tf
+  100  terraform init
+  101  terraform -h
+  102  terraform fmt
+  103  terraform plan
+  104  pd
+  105  pwd
+  106  ls
+  107  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)
+  108  brew install aws-iam-authenticator
+  109  aws-iam-authenticator help
+  110  aws-iam-authenticator help
+  111  brew install cfn-lint
+  112  kubectl get nodes
+  113  kubectl version 
+  114  sysctl -a | grep -E --color 'machdep.cpu.features|VMX'
+  115  kubectl get po -A
+  116  minikube status
+  117  kubektl get nodes
+  118  kubectl get nodes
+  119  kubectl get deployments
+  120  eksctl create cluster
+  121  brew install aws-iam-authenticator
+  122  eksctl create cluster \\n --name clust1 \\n --version 1.21 \\n --with-oidc \\n --without-nodegroup
+  123  eksctl create cluster \\n--name my-cluster \\n--region us-west-2 \\n--fargate
+  124  git --version
+  125  git status
+  126  cd Desktop
+  127  git clone https://github.com/sunanda2310/kubernetes-accelerator.git
+  128  cd /Users/sunanda.sharma/Documents/Slalom_FA/kubernetes-accelerator
+  129  ls
+  130  cd Desktop
+  131  cd ..
+  132  cd ..
+  133  cd ..
+  134  cd Desktop
+  135  ls
+  136  cd kubernetes-accelerator
+  137  ls
+  138  git status
+  139  git add .DS_Store
+  140  git add LICENSE
+  141  git add README.md
+  142  git add app-settings/
+  143  git add app.yml
+  144  git add app/
+  145  git add build/
+  146  git add cfn/
+  147  git add cluster/
+  148  git add container/
+  149  git status
+  150  git commit -m 'first commit'
+  151  git config --global user.email "sharma.unanda92@gmail.com"
+  152  git config --global user.name "sunanda2310"
+  153  git status
+  154  git commit -m "first commit"
+  155  git push origin main
+  156  git status
+  157  git push origin main
+  158  git push origin main
+  159  git status
+  160  git branch --unset-upstream
+  161  git status
+  162  ls
+  163  git status
+  164  clear
+  165  echo "# kubernetes-accelerator" >> README.md
+  166  git init
+  167  git commit -m "first commit"
+  168  git add .DS_Store
+  169  git add README.md
+  170  git branch -M main
+  171  git remote add origin https://github.com/sunanda2310/kubernetes-accelerator.git
+  172  git push -u origin main
+  173  git push -u origin main
+  174  clear
+  175  clear
+  176  cd ..
+  177  git clone https://github.com/sunanda2310/kubernetes-accelerator.git
+  178  cd kubernetes-accelerator
+  179  ls
+  180  git status
+  181  git add .DS_Store
+  182  git add README.md
+  183  git status
+  184  git commit -m "first commit"
+  185  git push origin main
+  186  git remote add origin https://github.com/sunanda2310/kubernetes-accelerator.git
+  187  git branch
+  188  git push -u origin main
+  189  git push -u origin main
+  190  clear
+  191  cd Desktop
+  192  cd kubernetes-accelerator
+  193  git status
+  194  git status
+  195  git branch
+  196  git remote -v
+  197  git push -u origin main
+  198  ssh-keygen -t ed25519 -C "sharma.sunanda92@gmail.com"
+  199  open ~/.ssh/config
+  200  touch ~/.ssh/config
+  201  rm -rf ~/.ssh/config
+  202  touch ~/.ssh/config
+  203  cd ~/.ssh/config
+  204  cd ~/.ssh
+  205  ls
+  206  vi config
+  207  cat id_ed25519
+  208  ssh-add -K ~/.ssh/id_ed25519
+  209  cat id_ed25519.pub
+  210  cd /Users/sunanda.sharma/Desktop/kubernetes-accelerator
+  211  ls
+  212  git push -u origin main
+  213  git remote -v
+  214  ls
+  215  git remote help
+  216  git remote
+  217  git remote origin
+  218  cd .git
+  219  ls
+  220  ls -a
+  221  ls -al
+  222  cat config
+  223  cd ..
+  224  git push -u origin main
+  225  nano ~/.ssh/config
+  226  cat ~/.ssh/id_ed25519
+  227  ssh -T git@github.com
+  228  git push -u origin main
+  229  git remote --list
+  230  git remote get-url --all
+  231  git remote --all
+  232  git remote get-url --all
+  233  exit
+  234  ls
+  235  cd Desktop/kubernetes-accelerator
+  236  ls
+  237  git push -u origin main
+  238  git remote
+  239  git remote get-url origin
+  240  cat ~/.ssh/config
+  241  cat .git/config
+  242  nano .git/config
+  243  git push -u origin main
+  244  git push -u origin main
+  245  ls ./build
+  246  ls ./build/bash
+  247  ./build/bash/deploy-create-cluster-codebuild.sh
+  248  complete -C '/usr/local/bin/aws_completer' aws
+  249  which aws_completer
+  250  cat ~/.zprofile
+  251  complete
+  252  autoload bashcompinit\nbashcompinit
+  253  complete
+  254  autoload bashcompinit && bashcompinit
+  255  autoload -Uz compinit && compinit
+  256  complete
+  257  complete -C '/usr/local/bin/aws_completer' aws
+  258  nano ~/.zprofile
+  259  exit
+  260  ls
+  261  pwd
+  262  cd ../..
+  263  pwd
+  264  cd ..
+  265  cd Desktop
+  266  ls
+  267  cd tf_code
+  268  ls
+  269  cd first_project
+  270  ls
+  271  cd first_project
+  272  ls
+  273  cd FA
+  274  ls
+  275  pwd
+  276  cd ../../../../..
+  277  ls
+  278  terraform init
+  279  cd Desktop/kubernetes-accelerator
+  280  ./build/bash/deploy-create-cluster-codebuild.sh
+  281  aws configure --list
+  282  aws configure list
+  283  nano ./build/bash/deploy-create-cluster-codebuild.sh
+  284  nano ./build/bash/deploy-create-cluster-codebuild.sh
+  285  ./build/bash/deploy-create-cluster-codebuild.sh
+  286  aws configure
+  287  ./build/bash/deploy-create-cluster-codebuild.sh
+  288  aws login
+  289  aws sts get-caller-identity 
+  290  unset AWS_SESSION_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+  291  aws configure
+  292  aws sts get-caller-identity 
+  293  cat ~/.aws/config
+  294  cat ~/.aws/credentials
+  295  nano ~/.aws/credentials
+  296  aws sts get-caller-identity 
+  297  aws configure
+  298  aws sts get-caller-identity 
+  299  aws configure
+  300  cd ~/.aws
+  301  ls
+  302  nano ~/.aws/credentials
+  303  aws sts get-caller-identity 
+  304  aws sts get-session-token
+  305  aws sts get-access-key-info
+  306  aws ecr get-login --region us-east-2
+  307  aws ecr get-login-password
+  308  aws ecr get-login-password --region us-east-2
+  309  cat ~/.aws/credentials
+  310  mv credentials credentials_old
+  311  aws configure
+  312  aws sts get-caller-identity
+  313  cat credentials
+  314  aws
+  315  aws help
+  316  aws configure
+  317  cat credentials
+  318  aws sts get-caller-identity
+  319  ls
+  320  rm credentials
+  321  mv credentials_old credentials
+  322  cat credentials
+  323  aws sts get-caller-identity
+  324  ls
+  325  cp credentials credentials_expired
+  326  ls
+  327  rm credentials
+  328  aws configure
+  329  aws sts get-caller-identity
+  330  cd ~/Desktop/kubernetes-accelerator
+  331  ls
+  332  ls -al
+  333  ./build/bash/deploy-create-cluster-codebuild.sh
+  334  aws cloudformation describe-stack-events --stack-name create-cluster-codebuild-eks
+  335  export AWS_PAGER=""
+  336  jq .
+  337  brew install jq
+  338  jq .
+  339  jq version
+  340  aws cloudformation describe-stack-events --stack-name create-cluster-codebuild-eks
+  341  aws cloudformation describe-stack-events --stack-name create-cluster-codebuild-eks | jq .
+  342  echo "{\"Artifacts\":{\"Type\":\"NO_ARTIFACTS\"},\"LogsConfig\":{\"CloudWatchLogs\":{\"GroupName\":\"/cicd/cluster-config\",\"Status\":\"ENABLED\",\"StreamName\":\"eks-cluster-job\"}},\"ServiceRole\":\"create-cluster-codebuild-ek-CodeBuildExecutionRole-1IZLD5I8GMJOQ\",\"Environment\":{\"Type\":\"LINUX_CONTAINER\",\"EnvironmentVariables\":[{\"Value\":\"eks-cluster-job\",\"Name\":\"APP_NAME\"},{\"Value\":\"/cicd/ssh-for-ec2s-public-key\",\"Name\":\"EKS_NODE_SSH_KEY_LOCATION\"},{\"Value\":\"ed-k8s\",\"Name\":\"EKS_CLUSTER_NAME\"},{\"Value\":\"t3.small\",\"Name\":\"EKS_COMPUTE_INSTANCE_TYPE\"},{\"Value\":\"2\",\"Name\":\"EKS_NODE_GROUP_CAPACITY\"}],\"Image\":\"aws/codebuild/standard:3.0\",\"ComputeType\":\"BUILD_GENERAL1_SMALL\"},\"Triggers\":{\"Webhook\":\"true\"},\"Source\":{\"Type\":\"GITHUB\",\"BuildSpec\":\"cluster/build/buildspec.yml\",\"Location\":\"https://github.com/ACCOUNT/aws-kubernetes-accelerator.git\"},\"Tags\":[{\"Value\":\"create-cluster-codebuild-eks-pipeline\",\"Key\":\"Name\"},{\"Value\":\"your-manager\",\"Key\":\"Manager\"},{\"Value\":\"your-office\",\"Key\":\"Market\"},{\"Value\":\"your-office\",\"Key\":\"Engagement Office\"},{\"Value\":\"your-email\",\"Key\":\"Email\"},{\"Value\":\"sw\",\"Key\":\"department\"},{\"Value\":\"infrastructure\",\"Key\":\"cost-category\"},{\"Value\":\"the-owner\",\"Key\":\"owner\"},{\"Value\":\"kubernetes-cicd\",\"Key\":\"application-name\"},{\"Value\":\"kubernetes-cicd\",\"Key\":\"application-role\"},{\"Value\":\"production\",\"Key\":\"environment\"},{\"Value\":\"0.0.1\",\"Key\":\"version\"},{\"Value\":\"kubernetes-automation\",\"Key\":\"created-by\"},{\"Value\":\"n/a\",\"Key\":\"tenant-id\"},{\"Value\":\"private\",\"Key\":\"confidentiality\"},{\"Value\":\"false\",\"Key\":\"requires-versioning\"},{\"Value\":\"true\",\"Key\":\"requires-logging\"}],\"Name\":\"eks-cluster-job\",\"TimeoutInMinutes\":\"45\"}" | jq .
+  343  code cluster/build/buildspec.yml
+  344  code cluster/build/buildspec.yml
+  345  git status
+  346  gid add build/bash/deploy-create-cluster-codebuild.sh
+  347  git add build/bash/deploy-create-cluster-codebuild.sh
+  348  git push origin main
+  349  ./build/bash/deploy-create-cluster-codebuild.sh
+  350  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks
+  351  ./build/bash/deploy-create-cluster-codebuild.sh
+  352  aws cloudformation describe-stack-events --stack-name create-cluster-codebuild-eks | jq .
+  353  git status
+  354  git remote origin
+  355  cat .git/config
+  356  git push
+  357  git status
+  358  git add .DS_Store
+  359  git add cfn/create-cluster-codebuild.yml
+  360  git add cluster/.DS_Store
+  361  git push origin main
+  362  ls
+  363  cat .git/config
+  364  git status
+  365  git commit -m 'first push'
+  366  git push origin main
+  367  ./build/bash/deploy-create-cluster-codebuild.sh
+  368  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks
+  369  ./build/bash/deploy-create-cluster-codebuild.sh
+  370  aws cloudformation describe-stack-events --stack-name create-cluster-codebuild-eks
+  371  echo "Failed to call CreateWebhook, reason: Failed to create webhook. Repository not found or permission denied. Please make sure the source credentials associated with your project have the permission to create webhook. (Service: AWSCodeBuild; Status Code: 400; Error Code: OAuthProviderException; Request ID: 6944ea0f-afd0-463c-973b-7b4f75c32bde; Proxy: null)",\n            "ResourceProperties": "{\"Artifacts\":{\"Type\":\"NO_ARTIFACTS\"},\"LogsConfig\":{\"CloudWatchLogs\":{\"GroupName\":\"/cicd/cluster-config\",\"Status\":\"ENABLED\",\"StreamName\":\"eks-cluster-job\"}},\"ServiceRole\":\"create-cluster-codebuild-ek-CodeBuildExecutionRole-1QQAPH8NUIY31\",\"Environment\":{\"Type\":\"LINUX_CONTAINER\",\"EnvironmentVariables\":[{\"Value\":\"eks-cluster-job\",\"Name\":\"APP_NAME\"},{\"Value\":\"/cicd/ssh-for-ec2s-public-key\",\"Name\":\"EKS_NODE_SSH_KEY_LOCATION\"},{\"Value\":\"ed-k8s\",\"Name\":\"EKS_CLUSTER_NAME\"},{\"Value\":\"t3.small\",\"Name\":\"EKS_COMPUTE_INSTANCE_TYPE\"},{\"Value\":\"2\",\"Name\":\"EKS_NODE_GROUP_CAPACITY\"}],\"Image\":\"aws/codebuild/standard:3.0\",\"ComputeType\":\"BUILD_GENERAL1_SMALL\"},\"Triggers\":{\"Webhook\":\"true\"},\"Source\":{\"Type\":\"GITHUB\",\"BuildSpec\":\"cluster/build/buildspec.yml\",\"Location\":\"https://github.com/sunanda2310/aws-kubernetes-accelerator.git\"},\"Tags\":[{\"Value\":\"create-cluster-codebuild-eks-pipeline\",\"Key\":\"Name\"},{\"Value\":\"your-manager\",\"Key\":\"Manager\"},{\"Value\":\"your-office\",\"Key\":\"Market\"},{\"Value\":\"your-office\",\"Key\":\"Engagement Office\"},{\"Value\":\"your-email\",\"Key\":\"Email\"},{\"Value\":\"sw\",\"Key\":\"department\"},{\"Value\":\"infrastructure\",\"Key\":\"cost-category\"},{\"Value\":\"the-owner\",\"Key\":\"owner\"},{\"Value\":\"kubernetes-cicd\",\"Key\":\"application-name\"},{\"Value\":\"kubernetes-cicd\",\"Key\":\"application-role\"},{\"Value\":\"production\",\"Key\":\"environment\"},{\"Value\":\"0.0.1\",\"Key\":\"version\"},{\"Value\":\"kubernetes-automation\",\"Key\":\"created-by\"},{\"Value\":\"n/a\",\"Key\":\"tenant-id\"},{\"Value\":\"private\",\"Key\":\"confidentiality\"},{\"Value\":\"false\",\"Key\":\"requires-versioning\"},{\"Value\":\"true\",\"Key\":\"requires-logging\"}],\"Name\":\"eks-cluster-job\",\"TimeoutInMinutes\":\"45\"}" | jq .
+  372  echo "{\"Artifacts\":{\"Type\":\"NO_ARTIFACTS\"},\"LogsConfig\":{\"CloudWatchLogs\":{\"GroupName\":\"/cicd/cluster-config\",\"Status\":\"ENABLED\",\"StreamName\":\"eks-cluster-job\"}},\"ServiceRole\":\"create-cluster-codebuild-ek-CodeBuildExecutionRole-1QQAPH8NUIY31\",\"Environment\":{\"Type\":\"LINUX_CONTAINER\",\"EnvironmentVariables\":[{\"Value\":\"eks-cluster-job\",\"Name\":\"APP_NAME\"},{\"Value\":\"/cicd/ssh-for-ec2s-public-key\",\"Name\":\"EKS_NODE_SSH_KEY_LOCATION\"},{\"Value\":\"ed-k8s\",\"Name\":\"EKS_CLUSTER_NAME\"},{\"Value\":\"t3.small\",\"Name\":\"EKS_COMPUTE_INSTANCE_TYPE\"},{\"Value\":\"2\",\"Name\":\"EKS_NODE_GROUP_CAPACITY\"}],\"Image\":\"aws/codebuild/standard:3.0\",\"ComputeType\":\"BUILD_GENERAL1_SMALL\"},\"Triggers\":{\"Webhook\":\"true\"},\"Source\":{\"Type\":\"GITHUB\",\"BuildSpec\":\"cluster/build/buildspec.yml\",\"Location\":\"https://github.com/sunanda2310/aws-kubernetes-accelerator.git\"},\"Tags\":[{\"Value\":\"create-cluster-codebuild-eks-pipeline\",\"Key\":\"Name\"},{\"Value\":\"your-manager\",\"Key\":\"Manager\"},{\"Value\":\"your-office\",\"Key\":\"Market\"},{\"Value\":\"your-office\",\"Key\":\"Engagement Office\"},{\"Value\":\"your-email\",\"Key\":\"Email\"},{\"Value\":\"sw\",\"Key\":\"department\"},{\"Value\":\"infrastructure\",\"Key\":\"cost-category\"},{\"Value\":\"the-owner\",\"Key\":\"owner\"},{\"Value\":\"kubernetes-cicd\",\"Key\":\"application-name\"},{\"Value\":\"kubernetes-cicd\",\"Key\":\"application-role\"},{\"Value\":\"production\",\"Key\":\"environment\"},{\"Value\":\"0.0.1\",\"Key\":\"version\"},{\"Value\":\"kubernetes-automation\",\"Key\":\"created-by\"},{\"Value\":\"n/a\",\"Key\":\"tenant-id\"},{\"Value\":\"private\",\"Key\":\"confidentiality\"},{\"Value\":\"false\",\"Key\":\"requires-versioning\"},{\"Value\":\"true\",\"Key\":\"requires-logging\"}],\"Name\":\"eks-cluster-job\",\"TimeoutInMinutes\":\"45\"}" | jq .
+  373  git push .
+  374  git status
+  375  git commit -a fixing the github url
+  376  git commit . -m 'fixing the github url'
+  377  git push
+  378  git status
+  379  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks
+  380  ./build/bash/deploy-create-cluster-codebuild.sh
+  381  git push
+  382  git push
+  383  git push --help
+  384  git push -f
+  385  git commit .
+  386  git commit . -m "debugging"
+  387  git push
+  388  git pull
+  389  git push
+  390  aws configure --list
+  391  aws configure list
+  392  git status
+  393  git add build/bash/account-init.sh
+  394  git status
+  395  git commit -m "testing"
+  396  git push origin main
+  397  ./build/bash/deploy-create-cluster-codebuild.sh
+  398  git status
+  399  git add build/bash/account-init.sh
+  400  git commit -m
+  401  git commit -m ""
+  402  git commit -m "test"
+  403  git push origin main
+  404  ./build/bash/deploy-create-cluster-codebuild.sh
+  405  ./build/bash/deploy-create-cluster-codebuild.sh
+  406  ./build/bash/deploy-create-cluster-codebuild.sh
+  407  git status
+  408  git add cfn/create-app-install-and-configure-codebuild.yml
+  409  git cfn/install-feature-reaper.yml
+  410  git add cfn/install-feature-reaper.yml
+  411  git add cluster/build/bash/create-cluster.sh
+  412  git add cluster/cluster.yml
+  413  git commit -m "test changes"
+  414  git push origin main
+  415  ./build/bash/deploy-create-cluster-codebuild.sh
+  416  if [ "$(kubectl version 2>/dev/null | grep -ic 'Client Version')" -eq 0 ]; then echo "hello; fi
+  417  bash
+  418  git add .
+  419  git commit -m "test change"
+  420  git push origin main
+  421  ./build/bash/deploy-create-cluster-codebuild.sh
+  422  git add .
+  423  git commit -m "changes"
+  424  git push origin main
+  425  aws configure
+  426  aws s3 ls
+  427  aws sts assume-role --role-arn AWS_EKS_ROLE --role-session-name "EKS-role-for-me"
+  428  aws iam get-role --role-name CLUSTER_AWS_IAM_ROLE
+  429  aws iam list-roles
+  430  aws eks update-kubeconfig --name CLUSTER-NAME --role-arn arn:aws:iam::AWS_ACCOUNT:role/AWSServiceRoleForAmazonEKS --role-session-name=EKS-role-for-me
+  431  aws eks update-kubeconfig 
+  432  aws eks update-kubeconfig  help
+  433  aws sts assume-role --role-arn AWS_EKS_ROLE 
+  434  aws sts assume-role --role-arn AWS_EKS_ROLE  --role-session-name "EKS-role-for-me"`
+  435  aws sts assume-role --role-arn AWS_EKS_ROLE  --role-session-name "EKS-role-for-me"
+  436  aws sts assume-role --role-arn arn:aws:iam::044338566249:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS  --role-session-name "EKS-role-for-me"
+  437  aws sts assume-role --role-arn arn:aws:iam::044338566249:role/eksctl-ed-k8s-cluster-ServiceRole-13Q2IOIQQAE3Y  --role-session-name "EKS-role-for-me"
+  438  aws sts assume-role --role-arn arn:aws:iam::044338566249:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS  --role-session-name "EKS-role-for-me"
+  439  aws sts assume-role --role-arn arn:aws:iam::044338566249:role/eksctl-ed-k8s-cluster-ServiceRole-13Q2IOIQQAE3Y  --role-session-name "EKS-role-for-me"
+  440  aws sts assume-role --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators  --role-session-name "EKS-role-for-me"
+  441  export AWS_ACCESS_KEY_ID="ASIAQUUWI2RUWI4JRYVP"
+  442  export AWS_SECRET_ACCESS_KEY="YK3STXVJVhJiC4xz4YBSv/Q+mAFBuZw69SvM2jd3"
+  443  export AWS_DEFAULT_REGION="us-east-1"
+  444  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::AWS_ACCOUNT:role/CLUSTER_AWS_IAM_ROLE
+  445  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::AWS_ACCOUNT:role/CLUSTER_AWS_IAM_ROLE --role-session-name=EKS-role-for-me
+  446  aws eks update-kubeconfig help
+  447  aws eks update-kubeconfig --name ed-k8s
+  448  aws sts assume-role --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators 
+  449  aws sts assume-role helkp
+  450  aws sts assume-role help
+  451  aws sts get-caller-identity
+  452  export
+  453  cat ~/.aws/credentials
+  454  export AWS_ACCESS_KEY=""
+  455  export AWS_SECRET_ACCESS_KEY=""
+  456  export
+  457  EXPORT AWS_ACCESS_KEY
+  458  export AWS_ACCESS_KEY
+  459  export
+  460  unset AWS_ACCESS_KEY
+  461  unset AWS_SECRET_ACCESS_KEY
+  462  export
+  463  unset AWS_ACCESS_KEY_ID
+  464  export
+  465  aws sts get-caller-identity
+  466  aws eks --region us-east-1 update-kubeconfig --name ed-k8s
+  467  kubctl get pods --kubeconfig ~/.kube/config
+  468  kubectl get pods --kubeconfig ~/.kube/config
+  469  aws iam list-roles --query "Roles[?RoleName == 'example-role'].[RoleName, Arn]"
+  470  aws iam list-roles --query "Roles[?RoleName == 'ed-k8s-us-east-1-Administrators'].[RoleName, Arn]"
+  471  aws sts assume-role --role-arn "arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators" --role-session-name AWSCLI-Session
+  472  export AWS_ACCESS_KEY_ID="ASIAQUUWI2RUQNKNI4NT"
+  473  export AWS_SECRET_ACCESS_KEY="6r67WqeIRM5Nqe4LSoCUa/PQq2vimli8wliC6Tl/"
+  474  export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEOP//////////wEaCXVzLWVhc3QtMSJHMEUCIQDuUMlu+HlhUhmMrvlU4f96Mzdv3wdRUXN+DA8k255rewIgSDWVbanCPQSmdBL5LNHTQTB9k8B+4dB5tqa/byAfzG8qmwIIHBAAGgwwNDQzMzg1NjYyNDkiDF+Lc572dlv5/TpPYir4AVa1nCGZUIHASawCtGFpXDFELgu3WMI6Rg+z8QC7g62ePf0zg7WwvWe4w/aQ8coUIWDAik7xnLvASJYrM/HZZp5Nt2mbhlT+Qj73l+f0kHs1cxpe0Kr26bjoTnywrvf9oPI9TCjRNsV3TZQh+HUphOsn5SMbYT26fOU2d0PceUUKyc66xCk6tcV3FCkt32naJktjUB6UWdVNGpdxTIOvurgyxnYWIlLW0bDtbUvphY7dYLRv7vm7XS6Pd1ZyBLNv4OULCsPIWzq/brezKzClT5i0jGu6dEq7XH+Itrz1CojtSOj2d2aRMN0SAWwQ5QjdP1viW5BjF17DMNfSj4kGOp0BghSK4/vWUowhuBpXTR95iLccJ1wpxc91iSBDvNNlBmMoso4UAH02mNrEK+AflNle1YYtVCCBLFFKimqF8bgOu3HOyrakpOtXyNul/sl2Y7C2YvnWk+cvyFDE/tvalG/6A9ywh+Q38tTwszo+NAuB+kcFkvWWMbFrXFCRZnOkOtepBuNF68Xr8sq34ISh1j//54gFYXO+RbkldlMyTw=="
+  475  aws sts get-caller-identity
+  476  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::AWS_ACCOUNT:role/CLUSTER_AWS_IAM_ROLE
+  477  kubectl get nodes
+  478  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators
+  479  kubectl get nodes
+  480  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators
+  481  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::AWS_ACCOUNT:role/CLUSTER_AWS_IAM_ROLE  --role-session-name="AWSCLI-Session"
+  482  aws eks update-kubeconfig help
+  483  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators/AWSCLI-Session
+  484  kubectl get nodes
+  485  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators
+  486  aws sts assume-role --role-arn "arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators"
+  487  aws sts assume-role help
+  488  export
+  489  aws sts get-caller-identity
+  490  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators
+  491  cat ~/.kube/config
+  492  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators
+  493  mv /Users/sunanda.sharma/.kube/config /Users/sunanda.sharma/.kube/config.old
+  494  aws eks update-kubeconfig --name ed-k8s --role-arn arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators
+  495  cat ~/.kube/config
+  496  kubectl get nodes
+  497  export
+  498  aws sts get-caller-identity
+  499  cat ~/.aws/credentials
+  500  kubectl edit configmap aws-auth -n ed-k8s
+  501  aws sts get-caller-identity
+  502  aws sts get-session-token
+  503  aws eks list-clusters
+  504  aws eks describe-cluster --name ed-k8s
+  505  kubectl help
+  506  kubectl cluster-info
+  507  kubectl get svc
+  508  eksctl
+  509  eksctl info
+  510  cat ~/.kube/config
+  511  code ~/.kube/config
+  512  aws sts get-caller-identity
+  513  aws eks --region us-east-1 update-kubeconfig --name ed-k8s --role-arn arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators/AWSCLI-Session
+  514  code ~/.kube/config
+  515  kubectl get svr
+  516  kubectl get svc
+  517  code ~/.kube/config
+  518  cat ~/.aws/config
+  519  aws sts get-caller-identity
+  520  export
+  521  aws sts get-caller-identity
+  522  aws s3 ls
+  523  aws eks ls
+  524  aws eks list-clusters
+  525  cat ~/.kube/config
+  526  history | grep "assume-role"
+  527  history | grep assume
+  528  aws eks --region us-east-1 update-kubeconfig --name ed-k8s --role-arn arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators --role-session-name "EKS-role-for-me"
+  529  aws sts assume-role --role-arn arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators --role-session-name "EKS-role-for-me"
+  530  export
+  531  unset AWS_ACCESS_KEY_ID
+  532  unset AWS_SECRET_ACCESS_KEY
+  533  unset AWS_SESSION_TOKEN
+  534  aws sts assume-role --role-arn arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators --role-session-name "EKS-role-for-me"
+  535  aws sts get-caller-identity
+  536  history 
+  537  history 0
+  538  aws sts assume-role --role-arn "arn:aws:iam::044338566249:role/ed-k8s-us-east-1-Administrators" --role-session-name "EKS-role-for-me"
+  539  export AWS_ACCESS_KEY_ID="ASIAQUUWI2RU2BTG6ABN"
+  540  export AWS_SECRET_ACCESS_KEY="X/A+QFvaRVak5LMKR7QoQgKLlKphUEbIgOt97D/W"
+  541  export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEOT//////////wEaCXVzLWVhc3QtMSJHMEUCIQDp2GW1WB/kFfVtwCUmdKuAtuW9+UZoPw6qn0MWA0jdcwIgc8FPq4yAXpYJmDYwq5ehu414Z9XqEcet9K3XRTEyCM8qnAIIHBAAGgwwNDQzMzg1NjYyNDkiDFGBATRjAR7hdkUutSr5AfqpKQjsJtcuv2ZuJhei4NRVCLO3FVdCtOD/SusZtir53KozhKvav+C72GD2JxuBtPDH+vyyz4OrSwpvN+Pe7vXXVMX2pQTfdqHiL+LqdyiqM9qa2m6HNHfBIg1vkC9SK2ZPj1xwN0SlV9MzvguOoG6J7IFx2axlLF8OdJatH5QhL9oxLZoLp1YPAS2RQW+R2huQTEfAwL0AkNBvxrVKWviZnuOEz12m7wha+tLFWcabUiyinLP2hZuYUIn3yZzlazgEdRFrxcl+I4Ioi9K1oRTrPrqeeETAiPzSOILev828VDEOQCPqRO+VeN16/jx5s0hlZw/4mkHqYTD654+JBjqdAUOE8l1rOKhiRi/AUwuO/TB+3vgWMf2PlkpzX8jy3ymaLPsh9HFmjksu0R3kLzLCip76zuYbbkD1N7ps+vAN731WMBsGVHdVTDph45NHJSboQZhEAPtSu2B2OKKnz06Z0gngK499WrpaVNX/DrNuhrzhpofogijALINE49C8FZzzftkpw5lpxKysvSrYBesrCXXY+nTiMGdql6qWA8c="
+  542  aws sts get-caller-identity
+  543  aws eks --region us-east-1 update-kubeconfig --name ed-k8s --role-arn "arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators/EKS-role-for-me"
+  544  cat /Users/sunanda.sharma/.kube/config
+  545  kubectl get nodes
+  546  aws eks --region us-east-1 update-kubeconfig --name ed-k8s --role-arn "arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators"
+  547  kubectl get nodes
+  548  aws eks --region us-east-1 update-kubeconfig --name ed-k8s --role-arn "arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators/EKS-role-for-me"
+  549  aws sts get-caller-identity
+  550  move /Users/sunanda.sharma/.kube/config /Users/sunanda.sharma/.kube/config.another.old
+  551  mv /Users/sunanda.sharma/.kube/config /Users/sunanda.sharma/.kube/config.another.old
+  552  aws eks --region us-east-1 update-kubeconfig --name ed-k8s --role-arn "arn:aws:sts::044338566249:assumed-role/ed-k8s-us-east-1-Administrators/EKS-role-for-me"
+  553  cat /Users/sunanda.sharma/.kube/config
+  554  kubectl get nodes
+  555  helm list
+  556  brew install helm
+  557  mv /Users/sunanda.sharma/.kube/config /Users/sunanda.sharma/.kube/config.another.old.old
+  558  ./build/bash/account-init.sh
+  559  export
+  560  unset AWS_ACCESS_KEY_ID
+  561  unset AWS_SECRET_ACCESS_KEY
+  562  unset AWS_SESSION_TOKEN
+  563  ./build/bash/account-init.sh
+  564  kube get nodes
+  565  kubectl get nodes
+  566  kubectl get nodes
+  567  eksctl utils 
+  568  export
+  569  ./build/bash/account-init.sh
+  570  export
+  571  bash
+  572  source ./build/bash/account-init.sh
+  573  cd Desktop/kubernetes-accelerator
+  574  kls
+  575  ls
+  576  source ./build/bash/account-init.sh
+  577  cd Desktop
+  578  cd kubernetes-accelerator
+  579  aws configure list
+  580  cat ~/.aws/credentials
+  581  cd ~/.aws
+  582  ls
+  583  .aws % cat ~/.aws/credentials
+  584   cat ~/.aws/credentials
+  585  aws configure
+  586  cd Desktop/kubernetes-accelerator
+  587  ls
+  588  source ./build/bash/account-init.sh
+  589  export
+  590  kubectl get nodes
+  591  kubectl get ns
+  592  source ./build/bash/account-init.sh
+  593  aws sts get-caller-identity
+  594  source ./build/bash/account-init.sh
+  595  kubectl get ns
+  596  eksctl get iamidentitymapping --cluster ed-k8s
+  597  clear
+  598  eksctl get iamidentitymapping --cluster ed-k8s
+  599  nslookup sunandak8labtest.com
+  600  ping sunandak8labtest.com
+  601  kubectl get pod -o wide
+  602  kubectl get service --all-namespaces
+  603  ls
+  604  kubectl get service --all-namespaces
+  605  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  606  export
+  607  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  608  export
+  609  aws sts get-caller-identity
+  610  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  611  git add .
+  612  git push origin main
+  613  git push --help
+  614  git push -f origin main
+  615  git push --help
+  616  git add .
+  617  git commit -m "test"
+  618  git push
+  619  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate
+  620  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate | awk '{print $1; exit} \nq
+  621  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate | awk '{print $1; exit}'
+  622  git switch -c test
+  623  git push
+  624  git push --set-upstream origin test
+  625  git push
+  626  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate
+  627  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate | awk '{print $1; exit}'
+  628  git branch -a --contains 6e12c229c2542438f2fc647382adb44053461988
+  629  git name-rev 6e12c229c2542438f2fc647382adb44053461988
+  630  git name-rev 6e12c229c2542438f2fc647382adb44053461988 | awk -F '"' '{print $2}'
+  631  git name-rev 6e12c229c2542438f2fc647382adb44053461988 | awk '{print $2; exit}'
+  632  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate
+  633  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate | tail -n 1
+  634  git branch --contains 6e12c229c2542438f2fc647382adb44053461988 --sort=-committerdate | tail -n 1 | awk '{print $2; exit}'
+  635  BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate | tail -n 1 | awk '{print $2; exit}')
+  636  git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate | tail -n 1 | awk '{print $2; exit}'
+  637  CODEBUILD_SOURCE_VERSION="6e12c229c2542438f2fc647382adb44053461988"
+  638  BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate | tail -n 1 | awk '{print $2; exit}')
+  639  echo $BRANCH_NAME
+  640  echo $BRANCH_NAME | cut -d '/' -f1
+  641  git switch -c "feature/test"
+  642  git push
+  643  git push --set-upstream origin feature/test
+  644  git add .
+  645  git commit -m "env script fixup"
+  646  git push
+  647  CODEBUILD_SOURCE_VERSION="eaee8c18efebe3b64d89d21ad9c4938f61151c48"
+  648  echo $CODEBUILD_SOURCE_VERSION
+  649  BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate | tail -n 1 | awk '{print $2; exit}')
+  650  echo $BRANCH_NAME
+  651  BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate  --sort=-committerdate )
+  652  echo $BRANCH_NAME
+  653  git add .
+  654  git commit -m "another update"
+  655  git push
+  656  CODEBUILD_SOURCE_VERSION="3d0c465496b28991e1aee9c4d495a03135c93cee"
+  657  git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate 
+  658  git branch --contains $CODEBUILD_SOURCE_VERSION --sort=committerdate 
+  659  BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=committerdate | head -n 1 | awk '{print $2; exit}') # | awk '{print $1; exit}')
+  660  BRANCH_NAME=$(git branch --contains $CODEBUILD_SOURCE_VERSION --sort=committerdate | head -n 1 | awk '{print $2; exit}')
+  661  echo $BRANCH_NAME
+  662  git add .
+  663  git commit -m "ugh"
+  664  git push
+  665  CODEBUILD_SOURCE_VERSION="b77efb2edafc9f6d51c33f20baecc54728c94a5a"
+  666  git branch --contains $CODEBUILD_SOURCE_VERSION --sort=committerdate
+  667  git reflog show
+  668  git branch --contains $CODEBUILD_SOURCE_VERSION --sort=-committerdate
+  669  git name-rev $CODEBUILD_SOURCE_VERSION
+  670  git name-rev $CODEBUILD_SOURCE_VERSION | awk '{print $2; exit}'
+  671  echo "Branch Name: $BRANCH_NAME"\nexport BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)\necho "Branch Type: $BRANCH_TYPE"
+  672  BRANCH_NAME=$(git name-rev $CODEBUILD_SOURCE_VERSION | awk '{print $2; exit}') 
+  673  echo "Branch Name: $BRANCH_NAME"\nexport BRANCH_TYPE=$(echo $BRANCH_NAME | cut -d '/' -f1)\necho "Branch Type: $BRANCH_TYPE"
+  674  git add .
+  675  git commit -m "maybe works"
+  676  git push
+  677  test $(git whatchanged -n 1 | grep -q 'app/'; echo $?) -eq 0 && echo 1 || echo 0
+  678  git whatchanged -n 1
+  679  bash
+  680  brew install shellcheck
+  681  git add .
+  682  git commit -m "another fix
+  683  git commit -m "another fix"
+  684  git push
+  685  which test
+  686  git add .
+  687  git commit -m "I'm sorry, so sorry"
+  688  git push
+  689  grep --help
+  690  man grep
+  691  git add .
+  692  git commit -m "grep?"
+  693  git push
+  694  git whatchanged -n 1 | grep 'app/'
+  695  git whatchanged -n 1 
+  696  git whatchanged -n 1 | grep 'grep'
+  697  git whatchanged -n 1 | grep 'grep' | echo $?
+  698  git whatchanged -n 1 | grep 'app/' | echo $?
+  699  git whatchanged -n 1
+  700  git whatchanged -n 2
+  701  git whatchanged -n 1
+  702  man grep
+  703  git add .
+  704  git commit -m "it was grep"
+  705  git push
+  706  APP_CHANGED=$(test "$(git whatchanged -n 1 | grep -q 'app/'; echo $?)" -eq 0 && echo 1 || echo 0)
+  707  echo $APP_CHANGED
+  708  APP_CHANGED=$(test $(git whatchanged -n 1 | grep -q 'app/'; echo $?) -eq 0 && echo 1 || echo 0)
+  709  echo $APP_CHANGED
+  710  git whatchanged -n 1 | { grep -q 'app/' || true; }
+  711  git whatchanged -n 1 | { grep -q 'app/' || true; } && echo $?
+  712  git whatchanged -n 1 | { grep -q 'grep' || true; } && echo $?
+  713  git whatchanged -n 1
+  714  git whatchanged -n 1 | { grep -q 'build' || true; } && echo $?
+  715  git whatchanged -n 1 | { grep 'build' }
+  716  git whatchanged -n 1 | { grep 'build' } && echo $?
+  717  man grep
+  718  git whatchanged -n 1 | { grep -c 'build' } && echo $?
+  719  git whatchanged -n 1 | { grep -c 'build' } 
+  720  git whatchanged -n 1 | { grep -c 'dave' } 
+  721  git whatchanged -n 1 | { grep -c 'dave' || true; } 
+  722  git whatchanged -n 1 | { grep -c 'grep' || true; } 
+  723  APP_CHANGED="$(git whatchanged -n 1 | { grep -c 'grep' || true; })"
+  724  echo $APP_CHANGED
+  725  APP_CHANGED="$(git whatchanged -n 1 | { grep -c 'dave' || true; })"
+  726  echo $APP_CHANGED
+  727  git add .
+  728  git commit -m "grep fixed maybe"
+  729  git push
+  730  aws ecr list-images
+  731  aws ecr describe-repositories
+  732  export
+  733  aws sts get-caller-identity
+  734  aws ecr describe-repositories
+  735  git add .
+  736  git commit -m "app name changed"
+  737  git push
+  738  aws ecr describe-repositories
+  739  git .
+  740  git add .
+  741  git commit -m "good morning"
+  742  git push
+  743  git push -F
+  744  git push -f
+  745  git add .
+  746  git commit -m "good morning"
+  747  git add .
+  748  git commit -m "good morning"
+  749  git push
+  750  git add .
+  751  git commit -m "another commit"
+  752  git push
+  753  aws ecr list-images --repository-name kubernetes_k8/slippy
+  754  aws ecr list-images --repository-name kubernetes_k8
+  755  git add .
+  756  git commit -m "force an app image build"
+  757  git push
+  758  git add .
+  759  git commit -m "did I save it??"
+  760  git push
+  761  history 0 | grep delete
+  762  aws cloudformation delete-stack --stack-name create-app-install-and-configure-codebuild-eks
+  763  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  764  git add . && git commit -m "another commit" && git push
+  765  aws ecr list-images --repository-name kubernetes_k8
+  766  aws ecr list-images --repository-name kubernetes_k8/slippy
+  767  aws cloudformation delete-stack --stack-name create-app-install-and-configure-codebuild-eks
+  768  git add . && git commit -m "another commit" && git push
+  769  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  770  git add . && git commit -m "another commit" && git push
+  771  npm --help
+  772  npm help ci
+  773  npm help ci
+  774  cd app
+  775  ls
+  776  npm install
+  777  cd ..
+  778  git add . && git commit -m "npm dependencies fix" && git push
+  779  source ./build/bash/account-init.sh
+  780  history 0 | grep unset
+  781  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  782  source ./build/bash/account-init.sh
+  783  kubectl get pods -l 'app=nginx' -o wide | awk {'print $1" " $3 " " $6'} | column -t
+  784  kubectl get pods  -o wide
+  785  export
+  786  kubectl get pods
+  787  kubectl get pods --all-namespaces
+  788  kubectl get pods --all-namespaces  -l 'app=nginx' -o wide | awk {'print $1" " $3 " " $6'} | column -t
+  789  kubectl get pods --all-namespaces  -o wide | awk {'print $1" " $3 " " $6'} | column -t
+  790  kubectl get pods --all-namespaces  -o wide 
+  791  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  792  aws cloudformation delete-stack --stack-name create-app-install-and-configure-codebuild-eks
+  793  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  794  git add . && git commit -m "fix ecs repo name" && git push
+  795  git add . && git commit -m "improve docker build script" && git push
+  796  source ./build/bash/account-init.sh
+  797  kubectl get pods --all-namespaces  -o wide 
+  798  kubectl -n ingress-nginx get svc ingress-nginx
+  799  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  800  source ./build/bash/account-init.sh
+  801  kubectl -n ingress-nginx get svc ingress-nginx
+  802  ping 10.100.204.52
+  803  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  804  aws cloudformation delete-stack --stack-name create-app-install-and-configure-codebuild-eks
+  805  aws cloudformation delete-stack --stack-name eks-cluster-job
+  806  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  807  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks
+  808  ./build/bash/deploy-create-cluster-codebuild.sh
+  809  git add . && git commit -m "improve docker build script" && git push
+  810  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  811  git add . && git commit -m "yay./build/bash/deploy-create-app-install-and-configure-codebuild.sh" && git push
+  812  git add . && git commit -m "yay./build/bash/deploy-create-app-install-and-configure-codebuild.sh" && git push
+  813  git add . && git commit -m "improve docker build script" && git push
+  814  /build/bash/deploy-create-cluster-codebuild.sh
+  815  ./build/bash/deploy-create-cluster-codebuild.sh
+  816  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks
+  817  aws cloudformation delete-stack --stack-name create-app-install-and-configure-codebuild-eks
+  818  ./build/bash/deploy-create-cluster-codebuild.sh
+  819  git add . && git commit -m "i need food" && git push
+  820  history 0 | grep aws
+  821  aws eks list-clusters
+  822  git add . && git commit -m "we like great scripts" && git push
+  823  git checkout -b main
+  824  git checkout main
+  825  git add . && git commit -m "updated readme" && git push
+  826  git pull
+  827  git checkout main
+  828  git pull
+  829  if [ expr "$BRANCH_NAME" : "master" > /dev/null ] || [ expr "$BRANCH_NAME" : "main" > /dev/null ]; then echo "hello"; fi
+  830  if expr "$BRANCH_NAME" : "master" > /dev/null ; then echo "hello"; fi
+  831  if [[ "$BRANCH_NAME" == *"master"* ]]; then echo "hello"; fi
+  832  BRANCH_NAME="master"
+  833  if [[ "$BRANCH_NAME" == *"master"* ]]; then echo "hello"; fi
+  834  BRANCH_NAME="main"
+  835  if [[ "$BRANCH_NAME" == *"master"* ]]; then echo "hello"; fi
+  836  if [[ "$BRANCH_NAME" == *"master"* ]] || [[ "$BRANCH_NAME" == *"main"* ]] ; then echo "hello"; fi
+  837  BRANCH_NAME="maind"
+  838  if [[ "$BRANCH_NAME" == *"master"* ]] || [[ "$BRANCH_NAME" == *"main"* ]] ; then echo "hello"; fi
+  839  git add . && git commit -m "fix create cluter looking for master branch" && git push
+  840  git add . && git commit -m "fix create cluter looking for master branch" && git push
+  841  git add . && git commit -m "retry - aws lack of capacity issue" && git push
+  842  git add . && git commit -m "retry - this time??" && git push
+  843  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  844  aws cloudformation list-stakcs
+  845  aws cloudformation list-stacks
+  846  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-nodegroup-eks-cluster-node-group-1
+  847  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-nodegroup-eks-cluster-node-group-1
+  848  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-nodegroup-eks-cluster-node-group-1
+  849  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-nodegroup-eks-cluster-node-group-1
+  850  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  851  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-nodegroup-eks-cluster-node-group-1
+  852  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  853  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  854  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  855  cd ~
+  856  wget https://github.com/gruntwork-io/cloud-nuke/releases/download/v0.5.0/cloud-nuke_darwin_amd64
+  857  mv cloud-nuke_darwin_amd64 /usr/local/bin/cloud-nuke
+  858  cloud-nuke --help
+  859  chmod +x /usr/local/bin/cloud-nuke
+  860  cloud-nuke --help
+  861  cd Desktop
+  862  cd kubernetes-accelerator
+  863  cloud-nuke aws
+  864  cloud-nuke aws --exclude-resource-type iam --dry-run
+  865  cloud-nuke aws --exclude-resource-type iam --dry-run --region us-east-1
+  866  cloud-nuke aws --exclude-resource-type iam --region us-east-1
+  867  clear
+  868  ./build/bash/deploy-create-cluster-codebuild.sh
+  869  git add . && git commit -m "new stack, first push" && git push
+  870  ./build/bash/deploy-create-cluster-codebuild.sh
+  871  git add . && git commit -m "new stack, first push #2" && git push
+  872  eksctl delete cluster --region=us-east-1 --name=ed-k8s
+  873  git add . && git commit -m "new stack, first push #3" && git push
+  874  cloud-nuke aws --exclude-resource-type iam --region us-east-1
+  875  aws cloudformation list-stacks
+  876  export AWS_PAGER=""
+  877  aws cloudformation list-stacks
+  878  aws cloudformation list-stacks | jq .StackSummaries
+  879  aws cloudformation list-stacks | jq '.StackSummaries.[]'
+  880  aws cloudformation list-stacks | jq '.StackSummaries[].StackName'
+  881  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-addon-iamserviceaccount-default-aws-admin
+  882  aws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster
+  883  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks
+  884  ./build/bash/deploy-create-cluster-codebuild.sh
+  885  git add . && git commit -m "new stack, first push - all over again :D" && git push
+  886  eksctl delete cluster --region=us-east-1 --name=ed-k8s
+  887  git add . && git commit -m "new stack, first push - all over again #2" && git push
+  888  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+  889  git add . && git commit -m "new stack, app push" && git push
+  890  git add . && git commit -m "new stack, app push #2" && git push
+  891  git add . && git commit -m "new stack, app push #3" && git push
+  892  if [[ "$BRANCH_NAME" == *"master"* ]] || [[ "$BRANCH_NAME" == *"main"* ]]; then echo "hello"; fi
+  893  echo $BRANCH_NAME
+  894  cd build/bash
+  895  shellcheck
+  896  ls
+  897  cd ../../cluster/build
+  898  ls
+  899  cd bash
+  900  ls
+  901  cat create-cluster.sh | shellcheck
+  902  shellcheck create-cluster.sh
+  903  cd ../..
+  904  ls
+  905  cd build
+  906  ls
+  907  cd bash
+  908  ls
+  909  cd ../../..
+  910  ls
+  911  cd build/bash
+  912  ls
+  913  shellcheck shared-env.sh
+  914  if [ "$BRANCH_NAME" == "master" ] || [ "$BRANCH_NAME" == "main" ]; then echo "hello"; fi
+  915  exit
+  916  cd Desktop
+  917  ls
+  918  cd kubernetes-accelerator
+  919  ls
+  920  clear
+  921  ls
+  922  if [ "$BRANCH_NAME" == "master" ] || [ "$BRANCH_NAME" == "main" ]; then echo "hello"; fi
+  923  BRANCH_NAME="master"
+  924  if [ "$BRANCH_NAME" == "master" ] || [ "$BRANCH_NAME" == "main" ]; then echo "hello"; fi
+  925  if [ "$BRANCH_NAME" -eq "master" ] || [ "$BRANCH_NAME" -eq "main" ]; then echo "hello"; fi
+  926  if "$BRANCH_NAME" -eq "master" || "$BRANCH_NAME" -eq "main" ; then echo "hello"; fi
+  927  if "$BRANCH_NAME" == "master" || "$BRANCH_NAME" == "main" ; then echo "hello"; fi
+  928  if "$BRANCH_NAME" == "master" || "$BRANCH_NAME" == "main"; then echo "hello"; fi
+  929  if "$BRANCH_NAME" == "master"; then echo "hello"; fi
+  930  if ["$BRANCH_NAME" == "master"]; then echo "hello"; fi
+  931  if [ "$BRANCH_NAME" == "master" ]; then echo "hello"; fi
+  932  if [ "$BRANCH_NAME"=="master" ]; then echo "hello"; fi
+  933  if [ "$BRANCH_NAME"=="master" || "$BRANCH_NAME"=="main ]; then echo "hello"; fi
+  934  if [ "$BRANCH_NAME"=="master" || "$BRANCH_NAME"=="main" ]; then echo "hello"; fi
+  935  if [ "$BRANCH_NAME"=="master" ] || [ "$BRANCH_NAME"=="main" ]; then echo "hello"; fi
+  936  /bin/bash
+  937  git add . && git commit -m "another try, end of the day" && git push
+  938  bash
+  939  git add . && git commit -m "another try, end of the day #2" && git push
+  940  git branch feature/test2 main
+  941  git status
+  942  history 0 | grep git
+  943  history 0 | grep test
+  944  switch -c "feature/test2"
+  945  switch -c "feature/test2"git 
+  946  git switch -c "feature/test2"
+  947  git push
+  948  git pull
+  949  git status
+  950  git switch -c "feature/test-new"
+  951  git add .
+  952  git commit -m "first commit"
+  953  git push
+  954  git push --set-upstream origin feature/test-new
+  955  git add .
+  956  git commit -m "AAAAAAAAAAAAAAAAAAAAAAAAAAARGH"
+  957  git push
+  958  ping slippy.sunandak8labtest.com
+  959  telnet slippy.sunandak8labtest.com 80
+  960  ping afa5f5725b94946319037915f64d23ac-ce752ecb9cce8af8.elb.us-east-1.amazonaws.com
+  961  ping slippy.sunandak8labtest.com
+  962  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+  963  ping slippy.sunandak8labtest.com
+  964  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+  965  ping slippy.sunandak8labtest.com
+  966  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+  967  ping slippy.sunandak8labtest.com
+  968  kubectl help
+  969  kubectl get services
+  970  ./build/bash/account-init.sh
+  971  source ./build/bash/account-init.sh
+  972  kubectl get services
+  973  history 0 | grep kubectl
+  974  kubectl -n ingress-nginx get svc ingress-nginx
+  975  export
+  976  history 0 | grep unset
+  977  alias aws-session-unset="unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN"
+  978  aws-session-unset
+  979  export
+  980  aws iam list-policies
+  981  export AWS_PAGER=""
+  982  aws iam list-policies | jq .
+  983  ./build/bash/account-init.sh
+  984  kubectl logs -f $(kubectl get po | egrep -o 'external-dns[A-Za-z0-9-]+')
+  985  kubectl get po
+  986  kubectl get pods
+  987  export
+  988  kubectl get nodes
+  989  source ./build/bash/account-init.sh
+  990  kubectl get nodes
+  991  kubectl logs -f $(kubectl get po | egrep -o 'external-dns[A-Za-z0-9-]+')
+  992  kubectl logs -f $(kubectl get po --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+')
+  993  kubectl logs -f $(kubectl get pods --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+')
+  994  kubectl get pods --all-namespaces
+  995  kubectl get pods --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+'
+  996  kubectl logs -f $(kubectl get pods --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+')
+  997  kubectl logs help
+  998  kubectl logs --help
+  999  kubectl logs -f $(kubectl get pods --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+') --all-containers=true
+ 1000  kubectl get pods --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+'
+ 1001  kubectl logs --all-namespaces
+ 1002  kubectl logs --help
+ 1003  kubectl get pods --all-namespaces
+ 1004  kubectl get events --all-namespaces
+ 1005  history 0
+ 1006  history 0 | grep nuke
+ 1007  read -p "Clear out any old policies/roles manually, and hit Y to continue... " -n 1 -r\necho    # (optional) move to a new line\nif [[ $REPLY =~ ^[Yy]$ ]]; then\n    # do dangerous stuff\nfi\n
+ 1008  read -p
+ 1009  read 
+ 1010  read "Clear out any old policies/roles manually, and hit Y to continue... " -n 1 -r\necho    # (optional) move to a new line\nif [[ $REPLY =~ ^[Yy]$ ]]; then\n    # do dangerous stuff\nfi\n
+ 1011  read -p "Continue (y/n)?" choice\ncase "$choice" in \n  y|Y ) echo "yes";;\n  n|N ) echo "no";;\n  * ) echo "invalid";;\nesac\n
+ 1012  \n\necho are you sure?\nread x\nif [ "$x" = "yes" ]\nthen\n  # do the dangerous stuff\nfi\n\n
+ 1013  history 0
+ 1014  history 0 | grep nuke
+ 1015  history 0
+ 1016  aws iam list-roles
+ 1017  aws-session-unset
+ 1018  aws iam list-roles
+ 1019  aws iam delete-role --role-name ed-k8s-us-east-1-Administratorscreate-account-alias                             enable-mfa-device                                list-instance-profiles-for-role                  tag-policy\ncreate-group                                     generate-credential-report                       list-mfa-device-tags                             tag-role\ncreate-instance-profile                          generate-organizations-access-report             list-mfa-devices                                 tag-saml-provider\ncreate-login-profile                             generate-service-last-accessed-details           list-open-id-connect-provider-tags               tag-server-certificate\ncreate-open-id-connect-provider                  get-access-key-last-used                         list-open-id-connect-providers                   tag-user\ncreate-policy                                    get-account-authorization-details                list-policies                                    untag-instance-profile\ncreate-policy-version                            get-account-password-policy                      list-policies-granting-service-access            untag-mfa-device\ncreate-role                                      get-account-summary                              list-policy-tags                                 untag-open-id-connect-provider\ncreate-saml-provider                             get-context-keys-for-custom-policy               list-policy-versions                             untag-policy\ncreate-service-linked-role                       get-context-keys-for-principal-policy            list-role-policies                               untag-role\ncreate-service-specific-credential               get-credential-report                            list-role-tags                                   untag-saml-provider\ncreate-user                                      get-group                                        list-roles                                       untag-server-certificate\ncreate-virtual-mfa-device                        get-group-policy                                 list-saml-provider-tags                          untag-user\ndeactivate-mfa-device                            get-instance-profile                             list-saml-providers                              update-access-key\ndelete-access-key                                get-login-profile                                list-server-certificate-tags                     update-account-password-policy\ndelete-account-alias                             get-open-id-connect-provider                     list-server-certificates                         update-assume-role-policy\ndelete-account-password-policy                   get-organizations-access-report                  list-service-specific-credentials                update-group\ndelete-group                                     get-policy                                       list-signing-certificates                        update-login-profile\ndelete-group-policy                              get-policy-version                               list-ssh-public-keys                             update-open-id-connect-provider-thumbprint\ndelete-instance-profile                          get-role                                         list-user-policies                               update-role\ndelete-login-profile                             get-role-policy                                  list-user-tags                                   update-role-description\ndelete-open-id-connect-provider                  get-saml-provider                                list-users                                       update-saml-provider\ndelete-policy                                    get-server-certificate                           list-virtual-mfa-devices                         update-server-certificate\ndelete-policy-version                            get-service-last-accessed-details                put-group-policy                                 update-service-specific-credential\ndelete-role                                      get-service-last-accessed-details-with-entities  put-role-permissions-boundary                    update-signing-certificate\ndelete-role-permissions-boundary                 get-service-linked-role-deletion-status          put-role-policy                                  update-ssh-public-key\ndelete-role-policy                               get-ssh-public-key                               put-user-permissions-boundary                    update-user\ndelete-saml-provider                             get-user                                         put-user-policy                                  upload-server-certificate\ndelete-server-certificate                        get-user-policy                                  remove-client-id-from-open-id-connect-provider   upload-signing-certificate\ndelete-service-linked-role                       list-access-keys                                 remove-role-from-instance-profile                upload-ssh-public-key\ndelete-service-specific-credential               list-account-aliases                             remove-user-from-group                           wait\ndelete-signing-certificate                       list-attached-group-policies                     reset-service-specific-credential                wizard\nsunanda.sharma@C02FX3RSMD6M kubernetes-accele
+ 1020  aws iam get-policies
+ 1021  aws iam get-policy ed-k8s-us-east-1-external-dns
+ 1022  aws iam list-policies
+ 1023  aws iam list-policies | jq -rc ".Policies"
+ 1024  aws iam list-policies | jq ".Policies"
+ 1025  aws iam list-policies | jq ".Policies.PolicyName"
+ 1026  aws iam list-policies > policies.json
+ 1027  cat policies.json 
+ 1028  cat policies.json | jq ".Policies"
+ 1029  cat policies.json | jq ".Policies[].PolicyName"
+ 1030  cat policies.json | jq ".Policies[].PolicyName, .Policies[].PolicyArn"
+ 1031  cat policies.json | jq ".Policies[]"
+ 1032  cat policies.json | jq ".Policies[].PolicyName, .Policies[].Arn"
+ 1033  cat policies.json | jq ".Policies[]"
+ 1034  cat policies.json | jq ".Policies[] | if .PolicyName == 'ed-k8s-us-east-1-external-dns'"
+ 1035  cat policies.json | jq ".Policies[] | select(.PolicyName == 'ed-k8s-us-east-1-external-dns')"
+ 1036  cat policies.json | jq ".Policies[] | select(.PolicyName == ed-k8s-us-east-1-external-dns)"
+ 1037  cat policies.json | jq ".Policies[]"
+ 1038  cat policies.json | jq ".Policies[] | select( .AttachmentCount == 0)"
+ 1039  cat policies.json | jq ".Policies[] | select( .AttachmentCount == 1)"
+ 1040  cat policies.json | jq ".Policies[] | select( .PolicyName == 'ed-k8s-us-east-1-external-dns')"
+ 1041  cat policies.json | jq ".Policies[] | select( .PolicyName == ed-k8s-us-east-1-external-dns)"
+ 1042  cat policies.json | jq ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-external-dns\")"
+ 1043  cat policies.json | jq ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-external-dns\") | .Arn"
+ 1044  POLICY=$(aws iam list-policies | jq -rc ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-external-dns\") | .Arn")
+ 1045  echo $POLICY
+ 1046  clear
+ 1047  ./build/bash/stack-nuke.sh
+ 1048  chmod +x ./build/bash/stack-nuke.sh
+ 1049  clear
+ 1050  ./build/bash/stack-nuke.sh
+ 1051  clear
+ 1052  ./build/bash/stack-nuke.sh
+ 1053  aws cloudformation delete-stack --stack-name create-cluster-codebuild-eks\naws cloudformation delete-stack --stack-name create-app-install-and-configure-codebuild-eks\naws cloudformation delete-stack --stack-name eksctl-ed-k8s-addon-iamserviceaccount-default-aws-admin\naws cloudformation delete-stack --stack-name eks-cluster-job\naws cloudformation delete-stack --stack-name eksctl-ed-k8s-cluster\neksctl delete cluster --region=us-east-1 --name=ed-k8s
+ 1054  eksctl delete cluster --region=us-east-1 --name=ed-k8s
+ 1055  POLICY_ARN=$(aws iam list-policies | jq -rc ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-external-dns\") | .Arn")\naws iam delete-policy --policy-arn "$POLICY_ARN"\naws iam delete-role --role-name ed-k8s-us-east-1-Administrators
+ 1056  POLICY_ARN=$(aws iam list-policies | jq -rc ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-admin-policy \") | .Arn")\naws iam delete-policy --policy-arn "$POLICY_ARN"
+ 1057  POLICY_ARN=$(aws iam list-policies | jq -rc ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-admin-policy\") | .Arn")\naws iam delete-policy --policy-arn "$POLICY_ARN"\n
+ 1058  aws iam list-policies | jq -rc ".Policies[] | select( .PolicyName == \"ed-k8s-us-east-1-admin-policy\") | .Arn"
+ 1059  aws iam delete-role --role-name ed-k8s-us-east-1-Administrators
+ 1060  aws iam list-attached-role-policies ed-k8s-us-east-1-Administrators
+ 1061  aws iam list-attached-role-policies --role-name ed-k8s-us-east-1-Administrators
+ 1062  aws iam delete-role --help
+ 1063  aws iam delete-role 
+ 1064  aws help iam delete-role 
+ 1065  aws iam delete-role help
+ 1066  history 0 | grep push
+ 1067  git add . && git commit -m "another try, start of the day #3" && git push
+ 1068  ./build/bash/deploy-create-cluster-codebuild.sh
+ 1069  git add . && git commit -m "another try, start of the day #3" && git push
+ 1070  git pull 
+ 1071  git add . && git commit -m "another try, start of the day #3" && git push
+ 1072  git add . && git commit -m "another try, start of the day #3" && git push
+ 1073  git remote -v
+ 1074  git switch -help
+ 1075  history 0 | grep "git checkout"
+ 1076  git checkout -b main
+ 1077  git switch  main
+ 1078  git add . && git commit -m "another try, start of the day #3.1" && git push
+ 1079  git pull 
+ 1080  git add . && git commit -m "another try, start of the day #3.1" && git push
+ 1081  git status
+ 1082  git checkout main
+ 1083  git reset --hard origin/main
+ 1084  ls
+ 1085  git status
+ 1086  eksctl delete cluster --region=us-east-1 --name=ed-k8s
+ 1087  git add . && git commit -m "another try, start of the day #3.2" && git push
+ 1088  ./build/bash/deploy-create-app-install-and-configure-codebuild.sh
+ 1089  git add . && git commit -m "another try, start of the day #3.2" && git push
+ 1090  git status
+ 1091  git add .
+ 1092  git commit -m "another fix for master/main branch naming"
+ 1093  git push
+ 1094  history 0 | grep kubectl
+ 1095  source ./build/bash/account-init.sh
+ 1096  kubectl get pods --all-namespaces
+ 1097  kubectl get events --all-namespaces
+ 1098  kubectl get events --all-namespaces | grep -i fail
+ 1099  clear
+ 1100  kubectl get events --all-namespaces | grep -i fail
+ 1101  kubectl get events --all-namespaces > /var/tmp/kubelog
+ 1102  ls /var/tmp
+ 1103  code /var/tmp/kubelog
+ 1104  aws 
+ 1105  clear
+ 1106  clear
+ 1107  aws ecr list-images
+ 1108  aws ecr list-images --repository-name kubernetes_k8
+ 1109  aws-session-unset 
+ 1110  aws ecr list-images --repository-name kubernetes_k8
+ 1111  aws ecr describe-images
+ 1112  aws ecr describe-images --repository-name kubernetes_k8
+ 1113  git status
+ 1114  git checkout -b feature/wednesday main
+ 1115  git add .
+ 1116  git commit -m "deploy time"
+ 1117  git push
+ 1118  git push --set-upstream origin feature/wednesday
+ 1119  kubectl get events --all-namespaces 
+ 1120  aws-session-unset
+ 1121  kubectl get events --all-namespaces 
+ 1122  source ./build/bash/account-init.sh
+ 1123  kubectl get events --all-namespaces 
+ 1124  kubectl get events --all-namespaces 
+ 1125  kubectl get events --all-namespaces 
+ 1126  watch --help #kubectl get events --all-namespaces 
+ 1127  brew install watch
+ 1128  watch --help
+ 1129  watch -n 5 kubectl get events --all-namespaces 
+ 1130  kubectl get events --all-namespaces 
+ 1131  kubectl get events --all-namespaces 
+ 1132  kubectl get events help
+ 1133  kubectl get events --help
+ 1134  kubectl get events --sort_by='.metadata.creationTimestamp' -A 
+ 1135  kubectl get events --sort_by='.lastTimestamp' -A 
+ 1136  kubectl get events --sort_by='.lastTimestamp' -A -w
+ 1137  git add .
+ 1138  git commit -m "testing an idea"
+ 1139  git push
+ 1140  kubectl get events --sort_by='.lastTimestamp' -A 
+ 1141  kubectl run nonsense --image=044338566249.dkr.ecr.us-east-1.amazonaws.com/kubernetes_k8:latest
+ 1142  kubectl get events --sort_by='.lastTimestamp' -A -w
+ 1143  git add .
+ 1144  git push -m "put your laptop password here"
+ 1145  git commit -m "put your laptop password here"
+ 1146  git push
+ 1147  kubectl get events --sort_by='.lastTimestamp' -A -w
+ 1148  kubectl get events --sort_by='.lastTimestamp' -A 
+ 1149  history 0 | grep kubectl
+ 1150  kubectl logs -f $(kubectl get pods --all-namespaces | egrep -o 'external-dns[A-Za-z0-9-]+') --all-containers=true
+ 1151  kubectl get pods --all-namespaces
+ 1152  kubectl logs -f external-dns-76f47bc5dd-jpg6m --all-containers=true
+ 1153  kubectl logs
+ 1154  kubectl logs -f external-dns-76f47bc5dd-jpg6m
+ 1155  kubectl config set-context --current --namespace=kube-system
+ 1156  kubectl logs -f external-dns-76f47bc5dd-jpg6m
+ 1157  kubectl logs -f external-dns-76f47bc5dd-jpg6m
+ 1158  kubectl -n kube-system get svc cluster-nginx-ingress-controller
+ 1159  kubectl get svc
+ 1160  aws sts get-caller-identity
+ 1161  aws-session-unset
+ 1162  source ./build/bash/account-init.sh 
+ 1163  kubectl -n kube-system get svc cluster-nginx-ingress-controller
+ 1164  kubectl get svc
+ 1165  kubectl -n kube-system get pods
+ 1166  history 0 | get kubectl
+ 1167  history 0 | grep kubectl
+ 1168  kubectl config set-context --current --namespace=
+ 1169  kubectl -n kube-system get pods
+ 1170  kubectl -n kube-system get pods --all-namespaces
+ 1171  kubectl config set-context --current --namespace=ingress-nginx
+ 1172  kubectl get svc cluster-nginx-ingress-controller
+ 1173  kubectl get svc nginx-ingress-controller-7f74f657bd-dfzv
+ 1174  kubectl get pods
+ 1175  kubectl get services nginx-ingress-controller-7f74f657bd-dfzv
+ 1176  kubectl get services
+ 1177  kubectl config set-context --current --namespace=kube-system
+ 1178  kubectl logs -f external-dns-76f47bc5dd-jpg6m
+ 1179  kubectl logs -f external-dns-76f47bc5dd-jpg6m -w
+ 1180  kubectl logs -f external-dns-76f47bc5dd-jpg6m 
+ 1181  kubectl logs -f external-dns-76f47bc5dd-jpg6m 

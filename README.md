@@ -41,6 +41,8 @@ A wildcard certificate should be configured and available in AWS Certificate Man
 ### ECR Repository
 A valid ECR repository must be created in the same region as the EKS cluster.
 
+Private repo. Repo must allow service principal to obtain image, create a permission statement. Otherwise kubelet will be unable to retrieve the image.
+
 ### GitHub Integration Must Be Set Manually in AWS CodeBuild
 Before creating the CodeBuild jobs below, you must manually go to CodeBuild and authenticate to github (aka creating an 'Open ID Connect' aka OIDC).  
 
