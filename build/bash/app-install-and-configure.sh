@@ -40,7 +40,7 @@ readonly APP_DOMAIN=$(cat app.yml | yq -r '.application.domain')
 readonly APP_IMAGE_NAME=$(cat app.yml | yq -r '.application.image.name')
 readonly APP_TAGS="$(cat app.yml | yq -r '.application.tags | to_entries | map(.key + "=" + .value) | join("\\,")')"
 
-if expr "$BRANCH_NAME" : "master" > /dev/null; then
+if [ "$BRANCH_NAME"=="master" ] || [ "$BRANCH_NAME"=="main" ]; then
   APP_ROUTING="domain"
   FEATURE_DOMAIN=${APP_NAME}.${APP_DOMAIN}
   INGRESS_PATH="/"
