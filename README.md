@@ -1,5 +1,5 @@
 # aws kubernetes accelerator
-:)
+:(
 Project is structured as follows:
 
 ```shell
