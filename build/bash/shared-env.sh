@@ -35,11 +35,11 @@ echo "Application Name: $APP_NAME"
 echo "Application Changes?: $APP_CHANGED"
 
 IMAGE_TAG=""
-if [ "$BRANCH_NAME"=="master" ] || [ "$BRANCH_NAME"=="main" ]; then
+if [ "$BRANCH_NAME" == "master" ] || [ "$BRANCH_NAME" == "main" ]; then
   export APP_NAMESPACE=$APP_NAME
   export IMAGE_TAG="latest"
   export SHOULD_BUILD_IMAGE=$(test $APP_CHANGED -eq 1 && echo "true" || echo "false")
-elif [ "$BRANCH_NAME"=="feature" ]; then
+elif [ "$BRANCH_NAME" == "feature" ]; then
   export APP_NAMESPACE=$(echo $BRANCH_NAME | cut -d '/' -f2 | cut -c1-15 | awk '{print tolower($0)}')-$APP_NAME
   readonly IMAGE_TAG_COUNT=$(aws ecr list-images --repository-name $ECR_REPOSITORY_NAME \
       | jq --arg NAMESPACE "${APP_NAMESPACE}" '[.imageIds[] | select(.imageTag != null) | .imageTag | select(startswith($NAMESPACE))] | length + 1')
