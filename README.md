@@ -1,5 +1,5 @@
 # aws kubernetes accelerator
-:|
+**PUT YOUR LAPTOP PASSWORD HERE**
 Project is structured as follows:
 
 ```shell
