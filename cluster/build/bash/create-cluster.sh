@@ -32,7 +32,7 @@ mv ./kubectl /usr/local/bin/kubectl
 kubectl version --short --client
 
 # install eksctl
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.63.0/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 mv /tmp/eksctl /usr/local/bin
 eksctl version
 

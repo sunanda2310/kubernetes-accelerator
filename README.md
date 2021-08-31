@@ -1,7 +1,7 @@
 # aws kubernetes accelerator
 **PUT YOUR LAPTOP PASSWORD HERE**
 Project is structured as follows:
-:)
+:(
 ```shell
 ├── app          # Place your application source code here (e.g. microservice, etc)
 ├── app-settings # Helm chart definition, templates and values
