@@ -11,8 +11,8 @@ aws cloudformation deploy \
   --template-file ./cfn/install-feature-reaper.yml \
   --stack-name "${stackName}" \
   --no-fail-on-empty-changeset \
-  --capabilities CAPABILITY_NAMED_IAM \
-  --profile #[eks admin profile]
+  --capabilities CAPABILITY_NAMED_IAM #\
+  # --profile #[eks admin profile]
  
 # ensure that termination protection enabled
 # aws cloudformation update-termination-protection \

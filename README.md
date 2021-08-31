@@ -1,7 +1,7 @@
 # aws kubernetes accelerator
 **PUT YOUR LAPTOP PASSWORD HERE**
 Project is structured as follows:
-:)
+:/
 ```shell
 ├── app          # Place your application source code here (e.g. microservice, etc)
 ├── app-settings # Helm chart definition, templates and values
@@ -72,9 +72,11 @@ Push commit to github, trigger pipeline.
 
 ### ECR Image Clean up Job
 3. Run `/build/bash/deploy-install-feature-reaper.sh` to apply this template  `cfn/install-feature-reaper.yml` or by importing into the AWS Cloudformation Console
-## Connecting to EKS Cluster
+## Connecting to EKS Cluster 
 
-In order to use helm to manage charts or to interact with the EKS cluster to manage k8s workloads or troubleshoot, you'll need the following:
+This part is not needed as we made a script to this working "account-init.sh"
+
+/* In order to use helm to manage charts or to interact with the EKS cluster to manage k8s workloads or troubleshoot, you'll need the following:
 
 1. A working local AWS profile
    * This is done by running `aws configure` and setting up your AWS Secret and Access Keys
@@ -102,6 +104,9 @@ In order to use helm to manage charts or to interact with the EKS cluster to man
       setx AWS_SECRET_ACCESS_KEY {enter your value here}
       setx AWS_DEFAULT_REGION {your region}
       ```
+*/
+
+Just run the account-init.sh script (" source .build/bash/account-init.sh " )      
 
 3. Now that your AWS Session has been configured, you need to connect and download the EKS cluster configuration. Run:
     * `aws eks update-kubeconfig --name CLUSTER-NAME --role-arn arn:aws:iam::AWS_ACCOUNT:role/CLUSTER_AWS_IAM_ROLE --role-session-name=EKS-role-for-me`
